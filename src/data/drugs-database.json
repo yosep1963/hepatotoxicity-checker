@@ -1,0 +1,4412 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-01-15",
+  "total_drugs": 109,
+  "search_instructions": "검색 필드: name_en, name_kr, brand_names_en, brand_names_kr 모두 검색 가능",
+  "hepatotoxicity_grades": {
+    "A": {
+      "score": 5,
+      "description": "Well-known hepatotoxin",
+      "color": "#DC2626"
+    },
+    "B": {
+      "score": 4,
+      "description": "Highly likely",
+      "color": "#EA580C"
+    },
+    "C": {
+      "score": 3,
+      "description": "Probable",
+      "color": "#CA8A04"
+    },
+    "D": {
+      "score": 2,
+      "description": "Possible",
+      "color": "#65A30D"
+    },
+    "E": {
+      "score": 1,
+      "description": "Unlikely",
+      "color": "#16A34A"
+    }
+  },
+  "drugs": [
+    {
+      "id": "acetaminophen",
+      "name_en": "Acetaminophen",
+      "name_kr": "아세트아미노펜",
+      "brand_names_en": [
+        "Tylenol",
+        "Panadol"
+      ],
+      "brand_names_kr": [
+        "타이레놀",
+        "써스펜",
+        "게보린",
+        "펜잘",
+        "타이레놀8시간이알"
+      ],
+      "drug_class": "진통해열제",
+      "drug_class_en": "Analgesic/Antipyretic",
+      "hepatotoxicity": {
+        "grade": "A",
+        "pattern": "hepatocellular",
+        "mechanism": "NAPQI 대사체 독성",
+        "dose_dependent": true
+      },
+      "cirrhosis_dosing": {
+        "child_A": "2-3g/일",
+        "child_B": "2g/일 단기간",
+        "child_C": "가급적 회피, 불가피시 1g/일"
+      },
+      "clinical_pearls": [
+        "복합감기약 내 숨겨진 아세트아미노펜 주의",
+        "NAC 과량복용 8-10시간 이내 투여"
+      ]
+    },
+    {
+      "id": "ibuprofen",
+      "name_en": "Ibuprofen",
+      "name_kr": "이부프로펜",
+      "brand_names_en": [
+        "Advil",
+        "Brufen",
+        "Motrin"
+      ],
+      "brand_names_kr": [
+        "부루펜",
+        "애드빌",
+        "이지엔6",
+        "캐롤에프"
+      ],
+      "drug_class": "비스테로이드소염제",
+      "drug_class_en": "NSAIDs",
+      "hepatotoxicity": {
+        "grade": "C",
+        "pattern": "hepatocellular",
+        "mechanism": "특이반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "가급적 회피",
+        "child_B": "금기",
+        "child_C": "금기"
+      },
+      "clinical_pearls": [
+        "간경변에서 신기능악화, 출혈위험 증가"
+      ]
+    },
+    {
+      "id": "naproxen",
+      "name_en": "Naproxen",
+      "name_kr": "나프록센",
+      "brand_names_en": [
+        "Naprosyn",
+        "Aleve"
+      ],
+      "brand_names_kr": [
+        "낙센",
+        "탁센",
+        "나프록센"
+      ],
+      "drug_class": "비스테로이드소염제",
+      "drug_class_en": "NSAIDs",
+      "hepatotoxicity": {
+        "grade": "C",
+        "pattern": "hepatocellular",
+        "mechanism": "특이반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "가급적 회피",
+        "child_B": "금기",
+        "child_C": "금기"
+      },
+      "clinical_pearls": [
+        "반감기 길어 간경변에서 더 주의"
+      ]
+    },
+    {
+      "id": "celecoxib",
+      "name_en": "Celecoxib",
+      "name_kr": "셀레콕시브",
+      "brand_names_en": [
+        "Celebrex"
+      ],
+      "brand_names_kr": [
+        "쎄레브렉스",
+        "셀레콕시브"
+      ],
+      "drug_class": "COX-2억제제",
+      "drug_class_en": "COX-2 inhibitor",
+      "hepatotoxicity": {
+        "grade": "C",
+        "pattern": "mixed",
+        "mechanism": "특이반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "50% 감량",
+        "child_C": "금기"
+      },
+      "clinical_pearls": [
+        "위장관 부작용 적으나 간경변에서 여전히 주의"
+      ]
+    },
+    {
+      "id": "tramadol",
+      "name_en": "Tramadol",
+      "name_kr": "트라마돌",
+      "brand_names_en": [
+        "Ultram",
+        "Tramal"
+      ],
+      "brand_names_kr": [
+        "트리돌",
+        "트라몰",
+        "마트리돌"
+      ],
+      "drug_class": "약한오피오이드",
+      "drug_class_en": "Weak opioid",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드문 특이반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "50mg q12h, 서방형 회피",
+        "child_C": "50mg q12h 또는 회피"
+      },
+      "clinical_pearls": [
+        "NSAIDs 대안으로 사용가능",
+        "서방형은 간경변에서 피해야"
+      ]
+    },
+    {
+      "id": "piperacillin-tazobactam",
+      "name_en": "Piperacillin-Tazobactam",
+      "name_kr": "피페라실린-타조박탐",
+      "brand_names_en": [
+        "Zosyn",
+        "Tazocin"
+      ],
+      "brand_names_kr": [
+        "타조신",
+        "타조페란",
+        "피페란"
+      ],
+      "drug_class": "베타락탐항생제",
+      "drug_class_en": "Beta-lactam",
+      "hepatotoxicity": {
+        "grade": "C",
+        "pattern": "cholestatic",
+        "mechanism": "면역매개",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량(신기능기준)",
+        "child_C": "통상용량(신기능기준)"
+      },
+      "clinical_pearls": [
+        "간경변에서 비교적 안전",
+        "SBP, 담도감염에 적합"
+      ]
+    },
+    {
+      "id": "ceftriaxone",
+      "name_en": "Ceftriaxone",
+      "name_kr": "세프트리악손",
+      "brand_names_en": [
+        "Rocephin"
+      ],
+      "brand_names_kr": [
+        "로세핀",
+        "트리악손",
+        "세프트론"
+      ],
+      "drug_class": "3세대세팔로스포린",
+      "drug_class_en": "3rd gen cephalosporin",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "cholestatic",
+        "mechanism": "담즙슬러지",
+        "dose_dependent": true
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "2g/일 초과 피함",
+        "child_C": "최대 2g/일, 장기사용 주의"
+      },
+      "clinical_pearls": [
+        "SBP 1차 치료제",
+        "Child-C에서는 cefotaxime 대안 고려",
+        "칼슘수액 동일라인 금기"
+      ]
+    },
+    {
+      "id": "cefotaxime",
+      "name_en": "Cefotaxime",
+      "name_kr": "세포탁심",
+      "brand_names_en": [
+        "Claforan"
+      ],
+      "brand_names_kr": [
+        "클라포란",
+        "세포탁심",
+        "세프탁스"
+      ],
+      "drug_class": "3세대세팔로스포린",
+      "drug_class_en": "3rd gen cephalosporin",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "극히드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량",
+        "child_C": "통상용량"
+      },
+      "clinical_pearls": [
+        "Child-C에서 ceftriaxone보다 선호",
+        "담즙슬러지 위험 없음"
+      ]
+    },
+    {
+      "id": "metronidazole",
+      "name_en": "Metronidazole",
+      "name_kr": "메트로니다졸",
+      "brand_names_en": [
+        "Flagyl"
+      ],
+      "brand_names_kr": [
+        "후라시닐",
+        "메트로니다졸",
+        "트리코졸"
+      ],
+      "drug_class": "니트로이미다졸",
+      "drug_class_en": "Nitroimidazole",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "대사체축적",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "50% 감량 (500mg q12h)",
+        "child_C": "50% 감량 (250mg q8-12h), 7일이내"
+      },
+      "clinical_pearls": [
+        "간경변에서 반드시 감량",
+        "7일이상 사용시 신경독성 주의",
+        "알코올 금기"
+      ]
+    },
+    {
+      "id": "meropenem",
+      "name_en": "Meropenem",
+      "name_kr": "메로페넴",
+      "brand_names_en": [
+        "Merrem"
+      ],
+      "brand_names_kr": [
+        "메로페넴",
+        "메렘",
+        "페넴시아"
+      ],
+      "drug_class": "카바페넴",
+      "drug_class_en": "Carbapenem",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "mixed",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량",
+        "child_C": "통상용량(신기능기준)"
+      },
+      "clinical_pearls": [
+        "간경변에서 가장 안전한 광범위항생제",
+        "Valproic acid 절대 병용금기"
+      ]
+    },
+    {
+      "id": "teicoplanin",
+      "name_en": "Teicoplanin",
+      "name_kr": "테이코플라닌",
+      "brand_names_en": [
+        "Targocid"
+      ],
+      "brand_names_kr": [
+        "타고시드",
+        "테이코플라닌"
+      ],
+      "drug_class": "글리코펩타이드",
+      "drug_class_en": "Glycopeptide",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량",
+        "child_C": "통상용량, TDM권장"
+      },
+      "clinical_pearls": [
+        "Vancomycin보다 신독성 낮음",
+        "간신증후군 위험환자에서 선호"
+      ]
+    },
+    {
+      "id": "vancomycin",
+      "name_en": "Vancomycin",
+      "name_kr": "반코마이신",
+      "brand_names_en": [
+        "Vancocin"
+      ],
+      "brand_names_kr": [
+        "반코마이신",
+        "반코신"
+      ],
+      "drug_class": "글리코펩타이드",
+      "drug_class_en": "Glycopeptide",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "거의없음",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량, TDM",
+        "child_B": "통상용량, 신기능모니터링",
+        "child_C": "통상용량, 신독성주의"
+      },
+      "clinical_pearls": [
+        "간독성 없으나 신독성이 주요문제",
+        "간신증후군 고위험시 teicoplanin 고려"
+      ]
+    },
+    {
+      "id": "cefazolin",
+      "name_en": "Cefazolin",
+      "name_kr": "세파졸린",
+      "brand_names_en": [
+        "Ancef",
+        "Kefzol"
+      ],
+      "brand_names_kr": [
+        "세파졸린",
+        "케프졸",
+        "세프졸"
+      ],
+      "drug_class": "1세대세팔로스포린",
+      "drug_class_en": "1st gen cephalosporin",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "극히드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량",
+        "child_C": "통상용량"
+      },
+      "clinical_pearls": [
+        "간경변에서 매우 안전",
+        "수술예방, 피부연조직감염"
+      ]
+    },
+    {
+      "id": "levofloxacin",
+      "name_en": "Levofloxacin",
+      "name_kr": "레보플록사신",
+      "brand_names_en": [
+        "Levaquin"
+      ],
+      "brand_names_kr": [
+        "크라비트",
+        "레보플록사신",
+        "레보신"
+      ],
+      "drug_class": "플루오로퀴놀론",
+      "drug_class_en": "Fluoroquinolone",
+      "hepatotoxicity": {
+        "grade": "C",
+        "pattern": "hepatocellular",
+        "mechanism": "특이반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량, LFT모니터링",
+        "child_C": "통상용량, 주의사용"
+      },
+      "clinical_pearls": [
+        "SBP 2차예방 가능",
+        "급성간손상 보고있어 모니터링"
+      ]
+    },
+    {
+      "id": "ciprofloxacin",
+      "name_en": "Ciprofloxacin",
+      "name_kr": "시프로플록사신",
+      "brand_names_en": [
+        "Cipro"
+      ],
+      "brand_names_kr": [
+        "시프로바이",
+        "시프로플록사신",
+        "씨프로"
+      ],
+      "drug_class": "플루오로퀴놀론",
+      "drug_class_en": "Fluoroquinolone",
+      "hepatotoxicity": {
+        "grade": "C",
+        "pattern": "mixed",
+        "mechanism": "특이반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량",
+        "child_C": "가능하면 다른항생제"
+      },
+      "clinical_pearls": [
+        "Theophylline, Tizanidine 병용금기",
+        "SBP예방 가능하나 내성증가"
+      ]
+    },
+    {
+      "id": "valproic-acid",
+      "name_en": "Valproic Acid",
+      "name_kr": "발프로산",
+      "brand_names_en": [
+        "Depakote",
+        "Depakene"
+      ],
+      "brand_names_kr": [
+        "데파코트",
+        "오르필",
+        "발프로산"
+      ],
+      "drug_class": "항경련제",
+      "drug_class_en": "Anticonvulsant",
+      "hepatotoxicity": {
+        "grade": "A",
+        "pattern": "hepatocellular",
+        "mechanism": "미토콘드리아독성",
+        "dose_dependent": true
+      },
+      "cirrhosis_dosing": {
+        "child_A": "50% 감량",
+        "child_B": "가급적 회피",
+        "child_C": "금기"
+      },
+      "clinical_pearls": [
+        "카바페넴 절대 병용금기",
+        "고암모니아혈증 유발"
+      ]
+    },
+    {
+      "id": "phenytoin",
+      "name_en": "Phenytoin",
+      "name_kr": "페니토인",
+      "brand_names_en": [
+        "Dilantin"
+      ],
+      "brand_names_kr": [
+        "디란틴",
+        "페니토인"
+      ],
+      "drug_class": "항경련제",
+      "drug_class_en": "Anticonvulsant",
+      "hepatotoxicity": {
+        "grade": "B",
+        "pattern": "mixed",
+        "mechanism": "과민반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "75%용량, 유리농도모니터링",
+        "child_B": "50%용량",
+        "child_C": "가급적회피"
+      },
+      "clinical_pearls": [
+        "유리농도 모니터링 필수",
+        "DRESS증후군 주의"
+      ]
+    },
+    {
+      "id": "carbamazepine",
+      "name_en": "Carbamazepine",
+      "name_kr": "카바마제핀",
+      "brand_names_en": [
+        "Tegretol"
+      ],
+      "brand_names_kr": [
+        "테그레톨",
+        "카바마제핀"
+      ],
+      "drug_class": "항경련제",
+      "drug_class_en": "Anticonvulsant",
+      "hepatotoxicity": {
+        "grade": "B",
+        "pattern": "mixed",
+        "mechanism": "과민반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "75%용량",
+        "child_B": "50%용량",
+        "child_C": "가급적회피"
+      },
+      "clinical_pearls": [
+        "CYP유도로 다수 약물상호작용",
+        "HLA검사 고려"
+      ]
+    },
+    {
+      "id": "amiodarone",
+      "name_en": "Amiodarone",
+      "name_kr": "아미오다론",
+      "brand_names_en": [
+        "Cordarone",
+        "Pacerone"
+      ],
+      "brand_names_kr": [
+        "코다론",
+        "아미오다론"
+      ],
+      "drug_class": "항부정맥제",
+      "drug_class_en": "Antiarrhythmic",
+      "hepatotoxicity": {
+        "grade": "A",
+        "pattern": "hepatocellular",
+        "mechanism": "인지질증, 미토콘드리아독성",
+        "dose_dependent": true
+      },
+      "cirrhosis_dosing": {
+        "child_A": "100-200mg/일",
+        "child_B": "가급적회피",
+        "child_C": "금기"
+      },
+      "clinical_pearls": [
+        "장기사용시 10-25% 간독성",
+        "반감기 40-55일로 매우 김"
+      ]
+    },
+    {
+      "id": "atorvastatin",
+      "name_en": "Atorvastatin",
+      "name_kr": "아토르바스타틴",
+      "brand_names_en": [
+        "Lipitor"
+      ],
+      "brand_names_kr": [
+        "리피토",
+        "아토르바스타틴",
+        "뉴바스틴"
+      ],
+      "drug_class": "스타틴",
+      "drug_class_en": "Statin",
+      "hepatotoxicity": {
+        "grade": "C",
+        "pattern": "hepatocellular",
+        "mechanism": "특이반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "10-20mg/일",
+        "child_B": "10mg/일",
+        "child_C": "금기"
+      },
+      "clinical_pearls": [
+        "NAFLD/NASH에서 오히려 도움될 수 있음",
+        "Child-C에서는 금기"
+      ]
+    },
+    {
+      "id": "haloperidol",
+      "name_en": "Haloperidol",
+      "name_kr": "할로페리돌",
+      "brand_names_en": [
+        "Haldol"
+      ],
+      "brand_names_kr": [
+        "할돌",
+        "할로페리돌"
+      ],
+      "drug_class": "항정신병제",
+      "drug_class_en": "Antipsychotic",
+      "hepatotoxicity": {
+        "grade": "C",
+        "pattern": "cholestatic",
+        "mechanism": "특이반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "50%감량",
+        "child_C": "50%감량"
+      },
+      "clinical_pearls": [
+        "간성뇌증 섬망에 사용가능",
+        "QT연장 주의"
+      ]
+    },
+    {
+      "id": "diazepam",
+      "name_en": "Diazepam",
+      "name_kr": "디아제팜",
+      "brand_names_en": [
+        "Valium"
+      ],
+      "brand_names_kr": [
+        "바리움",
+        "디아제팜"
+      ],
+      "drug_class": "벤조디아제핀",
+      "drug_class_en": "Benzodiazepine",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "50%감량",
+        "child_B": "가급적회피",
+        "child_C": "금기"
+      },
+      "clinical_pearls": [
+        "반감기 200시간까지 연장",
+        "간성뇌증 위험",
+        "Lorazepam, Oxazepam이 더 안전"
+      ]
+    },
+    {
+      "id": "quetiapine",
+      "name_en": "Quetiapine",
+      "name_kr": "쿠에티아핀",
+      "brand_names_en": [
+        "Seroquel"
+      ],
+      "brand_names_kr": [
+        "쎄로켈",
+        "쿠에타핀",
+        "쿠에티아핀"
+      ],
+      "drug_class": "비정형항정신병제",
+      "drug_class_en": "Atypical antipsychotic",
+      "hepatotoxicity": {
+        "grade": "C",
+        "pattern": "hepatocellular",
+        "mechanism": "특이반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "25mg부터",
+        "child_B": "25mg부터",
+        "child_C": "25mg부터, 최소용량"
+      },
+      "clinical_pearls": [
+        "간성뇌증 섬망에 사용가능",
+        "저용량부터 시작"
+      ]
+    },
+    {
+      "id": "methotrexate",
+      "name_en": "Methotrexate",
+      "name_kr": "메토트렉세이트",
+      "brand_names_en": [
+        "Rheumatrex",
+        "Trexall"
+      ],
+      "brand_names_kr": [
+        "메토트렉세이트",
+        "유메토"
+      ],
+      "drug_class": "항대사제",
+      "drug_class_en": "Antimetabolite",
+      "hepatotoxicity": {
+        "grade": "A",
+        "pattern": "hepatocellular",
+        "mechanism": "직접독성, 섬유화",
+        "dose_dependent": true
+      },
+      "cirrhosis_dosing": {
+        "child_A": "가급적회피",
+        "child_B": "금기",
+        "child_C": "금기"
+      },
+      "clinical_pearls": [
+        "간경변 환자에서 금기",
+        "누적독성으로 섬유화 유발"
+      ]
+    },
+    {
+      "id": "azathioprine",
+      "name_en": "Azathioprine",
+      "name_kr": "아자티오프린",
+      "brand_names_en": [
+        "Imuran",
+        "Azasan"
+      ],
+      "brand_names_kr": [
+        "이무란",
+        "아자티오프린"
+      ],
+      "drug_class": "면역억제제",
+      "drug_class_en": "Immunosuppressant",
+      "hepatotoxicity": {
+        "grade": "B",
+        "pattern": "cholestatic",
+        "mechanism": "정맥폐쇄질환, 담즙정체",
+        "dose_dependent": true
+      },
+      "cirrhosis_dosing": {
+        "child_A": "75%용량",
+        "child_B": "50%용량",
+        "child_C": "50%용량"
+      },
+      "clinical_pearls": [
+        "자가면역간염 치료에 사용",
+        "Allopurinol 병용시 1/4로 감량"
+      ]
+    },
+    {
+      "id": "isoniazid",
+      "name_en": "Isoniazid",
+      "name_kr": "이소니아지드",
+      "brand_names_en": [
+        "INH",
+        "Nydrazid"
+      ],
+      "brand_names_kr": [
+        "이소니아지드",
+        "유한이나"
+      ],
+      "drug_class": "항결핵제",
+      "drug_class_en": "Antitubercular",
+      "hepatotoxicity": {
+        "grade": "A",
+        "pattern": "hepatocellular",
+        "mechanism": "반응성 대사체",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량, 주1회LFT",
+        "child_B": "통상용량, 주1회LFT",
+        "child_C": "주의사용, 대안고려"
+      },
+      "clinical_pearls": [
+        "간경변 결핵치료시 면밀한 모니터링",
+        "LFT 3배+증상시 중단"
+      ]
+    },
+    {
+      "id": "amoxicillin-clavulanate",
+      "name_en": "Amoxicillin-Clavulanate",
+      "name_kr": "아목시실린-클라불란산",
+      "brand_names_en": [
+        "Augmentin"
+      ],
+      "brand_names_kr": [
+        "오구멘틴",
+        "클라목스",
+        "아목시클라브"
+      ],
+      "drug_class": "베타락탐항생제",
+      "drug_class_en": "Beta-lactam",
+      "hepatotoxicity": {
+        "grade": "A",
+        "pattern": "cholestatic",
+        "mechanism": "Clavulanate 면역매개",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "가능하면 다른항생제",
+        "child_B": "다른항생제 우선",
+        "child_C": "가급적회피"
+      },
+      "clinical_pearls": [
+        "약인성간손상 가장 흔한 원인",
+        "Clavulanate가 간독성 주원인"
+      ]
+    },
+    {
+      "id": "green-tea-extract",
+      "name_en": "Green Tea Extract",
+      "name_kr": "녹차추출물",
+      "brand_names_en": [
+        "Green Tea Extract",
+        "EGCG"
+      ],
+      "brand_names_kr": [
+        "녹차추출물",
+        "카테킨",
+        "EGCG"
+      ],
+      "drug_class": "건강기능식품",
+      "drug_class_en": "Supplement",
+      "hepatotoxicity": {
+        "grade": "B",
+        "pattern": "hepatocellular",
+        "mechanism": "EGCG 산화스트레스",
+        "dose_dependent": true
+      },
+      "cirrhosis_dosing": {
+        "child_A": "가급적회피",
+        "child_B": "회피",
+        "child_C": "금기"
+      },
+      "clinical_pearls": [
+        "다이어트 보조제로 흔히 사용",
+        "공복 고용량에서 간독성"
+      ]
+    },
+    {
+      "id": "ephedra",
+      "name_en": "Ephedra",
+      "name_kr": "마황",
+      "brand_names_en": [
+        "Ephedra",
+        "Ma-huang"
+      ],
+      "brand_names_kr": [
+        "마황",
+        "에페드라"
+      ],
+      "drug_class": "한약재",
+      "drug_class_en": "Herbal",
+      "hepatotoxicity": {
+        "grade": "B",
+        "pattern": "hepatocellular",
+        "mechanism": "에페드린독성",
+        "dose_dependent": true
+      },
+      "cirrhosis_dosing": {
+        "child_A": "회피",
+        "child_B": "금기",
+        "child_C": "금기"
+      },
+      "clinical_pearls": [
+        "FDA 판매금지 성분",
+        "심혈관 부작용도 심각"
+      ]
+    },
+    {
+      "id": "injinho",
+      "name_en": "Artemisia capillaris",
+      "name_kr": "인진호",
+      "brand_names_en": [
+        "Injinho",
+        "Artemisia"
+      ],
+      "brand_names_kr": [
+        "인진호",
+        "인진쑥",
+        "사철쑥"
+      ],
+      "drug_class": "한약재",
+      "drug_class_en": "Herbal",
+      "hepatotoxicity": {
+        "grade": "C",
+        "pattern": "hepatocellular",
+        "mechanism": "불명확",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "주의",
+        "child_B": "주의",
+        "child_C": "주의"
+      },
+      "clinical_pearls": [
+        "한의학에서 황달치료 사용",
+        "간보호 효과 근거 제한적"
+      ]
+    },
+    {
+      "id": "spironolactone",
+      "name_en": "Spironolactone",
+      "name_kr": "스피로노락톤",
+      "brand_names_en": [
+        "Aldactone"
+      ],
+      "brand_names_kr": [
+        "알닥톤",
+        "스피로노락톤",
+        "스피로락톤"
+      ],
+      "drug_class": "칼륨보존이뇨제",
+      "drug_class_en": "K-sparing diuretic",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "극히드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "50-100mg/일 시작",
+        "child_B": "100mg/일 시작",
+        "child_C": "100mg/일 시작, K 모니터링"
+      },
+      "clinical_pearls": [
+        "복수치료 1차약제",
+        "Furosemide와 100:40 비율 병용"
+      ]
+    },
+    {
+      "id": "furosemide",
+      "name_en": "Furosemide",
+      "name_kr": "푸로세미드",
+      "brand_names_en": [
+        "Lasix"
+      ],
+      "brand_names_kr": [
+        "라식스",
+        "푸로세미드",
+        "후로세마이드"
+      ],
+      "drug_class": "루프이뇨제",
+      "drug_class_en": "Loop diuretic",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "극히드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "Spironolactone과 병용",
+        "child_C": "전해질 면밀 모니터링"
+      },
+      "clinical_pearls": [
+        "Spironolactone과 병용",
+        "과도한 이뇨는 간성뇌증 유발"
+      ]
+    },
+    {
+      "id": "tolvaptan",
+      "name_en": "Tolvaptan",
+      "name_kr": "톨밥탄",
+      "brand_names_en": [
+        "Samsca",
+        "Jynarque"
+      ],
+      "brand_names_kr": [
+        "삼스카",
+        "톨밥탄"
+      ],
+      "drug_class": "바소프레신길항제",
+      "drug_class_en": "Vasopressin antagonist",
+      "hepatotoxicity": {
+        "grade": "B",
+        "pattern": "hepatocellular",
+        "mechanism": "특이반응(고용량)",
+        "dose_dependent": true
+      },
+      "cirrhosis_dosing": {
+        "child_A": "15mg/일 시작",
+        "child_B": "15mg/일, 단기간",
+        "child_C": "주의, 단기간만"
+      },
+      "clinical_pearls": [
+        "난치성 저나트륨혈증에 단기사용",
+        "급격한 나트륨교정 주의"
+      ]
+    },
+    {
+      "id": "propranolol",
+      "name_en": "Propranolol",
+      "name_kr": "프로프라놀롤",
+      "brand_names_en": [
+        "Inderal"
+      ],
+      "brand_names_kr": [
+        "인데랄",
+        "프로프라놀롤"
+      ],
+      "drug_class": "비선택적베타차단제",
+      "drug_class_en": "Non-selective beta blocker",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "20mg bid 시작",
+        "child_B": "10-20mg bid 시작",
+        "child_C": "10mg bid, 혈압/맥박모니터링"
+      },
+      "clinical_pearls": [
+        "정맥류예방 1차약제",
+        "심박수 55-60/분 목표"
+      ]
+    },
+    {
+      "id": "carvedilol",
+      "name_en": "Carvedilol",
+      "name_kr": "카베딜롤",
+      "brand_names_en": [
+        "Coreg"
+      ],
+      "brand_names_kr": [
+        "딜라트렌",
+        "카베딜롤"
+      ],
+      "drug_class": "알파베타차단제",
+      "drug_class_en": "Alpha/beta blocker",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "6.25mg bid",
+        "child_B": "3.125-6.25mg bid",
+        "child_C": "금기 또는 매우저용량"
+      },
+      "clinical_pearls": [
+        "정맥류예방 대안",
+        "저혈압 위험 더 높을수 있음"
+      ]
+    },
+    {
+      "id": "lactulose",
+      "name_en": "Lactulose",
+      "name_kr": "락툴로스",
+      "brand_names_en": [
+        "Enulose",
+        "Kristalose"
+      ],
+      "brand_names_kr": [
+        "듀파락",
+        "락툴로스",
+        "듀팔락"
+      ],
+      "drug_class": "삼투성하제",
+      "drug_class_en": "Osmotic laxative",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "흡수안됨",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "15-30mL bid-tid",
+        "child_B": "20-30mL tid-qid",
+        "child_C": "적절한 배변유지"
+      },
+      "clinical_pearls": [
+        "간성뇌증 1차치료",
+        "하루 2-3회 연변 목표"
+      ]
+    },
+    {
+      "id": "rifaximin",
+      "name_en": "Rifaximin",
+      "name_kr": "리팍시민",
+      "brand_names_en": [
+        "Xifaxan"
+      ],
+      "brand_names_kr": [
+        "노르믹스",
+        "리팍시민"
+      ],
+      "drug_class": "비흡수성항생제",
+      "drug_class_en": "Non-absorbable antibiotic",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "거의흡수안됨",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "550mg bid",
+        "child_B": "550mg bid",
+        "child_C": "550mg bid"
+      },
+      "clinical_pearls": [
+        "간성뇌증 2차예방",
+        "Lactulose와 병용"
+      ]
+    },
+    {
+      "id": "albumin",
+      "name_en": "Albumin",
+      "name_kr": "알부민",
+      "brand_names_en": [
+        "Albumin",
+        "Albutein"
+      ],
+      "brand_names_kr": [
+        "알부민",
+        "알부미나"
+      ],
+      "drug_class": "혈장단백",
+      "drug_class_en": "Plasma protein",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "없음",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량",
+        "child_C": "SBP:1.5g/kg D1+1g/kg D3, LVP:8g/L배액"
+      },
+      "clinical_pearls": [
+        "SBP에서 신기능보호",
+        "LVP후 순환기능유지"
+      ]
+    },
+    {
+      "id": "terlipressin",
+      "name_en": "Terlipressin",
+      "name_kr": "테를리프레신",
+      "brand_names_en": [
+        "Glypressin"
+      ],
+      "brand_names_kr": [
+        "글리프레신",
+        "테를리프레신"
+      ],
+      "drug_class": "바소프레신유사체",
+      "drug_class_en": "Vasopressin analogue",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "없음",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "해당없음",
+        "child_B": "해당없음",
+        "child_C": "1mg q4-6h IV"
+      },
+      "clinical_pearls": [
+        "HRS-AKI 치료에 Albumin과 병용",
+        "허혈성 합병증 주의"
+      ]
+    },
+    {
+      "id": "midodrine",
+      "name_en": "Midodrine",
+      "name_kr": "미도드린",
+      "brand_names_en": [
+        "ProAmatine"
+      ],
+      "brand_names_kr": [
+        "미도드린",
+        "미도린"
+      ],
+      "drug_class": "알파작용제",
+      "drug_class_en": "Alpha-1 agonist",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "없음",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "해당없음",
+        "child_B": "해당없음",
+        "child_C": "7.5mg tid 시작"
+      },
+      "clinical_pearls": [
+        "HRS 보조치료",
+        "누운자세 고혈압 주의"
+      ]
+    },
+    {
+      "id": "tenofovir-df",
+      "name_en": "Tenofovir DF",
+      "name_kr": "테노포비르",
+      "brand_names_en": [
+        "Viread"
+      ],
+      "brand_names_kr": [
+        "비리어드",
+        "테노포비르"
+      ],
+      "drug_class": "항바이러스제",
+      "drug_class_en": "Antiviral",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "중단시HBV재활성화",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량(신기능확인)",
+        "child_C": "통상용량(신기능기준)"
+      },
+      "clinical_pearls": [
+        "HBV 간경변 치료의 근간",
+        "갑자기 중단시 심한 간염재발"
+      ]
+    },
+    {
+      "id": "tenofovir-af",
+      "name_en": "Tenofovir AF",
+      "name_kr": "테노포비르AF",
+      "brand_names_en": [
+        "Vemlidy"
+      ],
+      "brand_names_kr": [
+        "베믈리디",
+        "테노포비르AF"
+      ],
+      "drug_class": "항바이러스제",
+      "drug_class_en": "Antiviral",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "중단시HBV재활성화",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량",
+        "child_C": "데이터제한적"
+      },
+      "clinical_pearls": [
+        "TDF보다 신기능/골밀도에 안전",
+        "비대상성에서 경험 제한적"
+      ]
+    },
+    {
+      "id": "entecavir",
+      "name_en": "Entecavir",
+      "name_kr": "엔테카비르",
+      "brand_names_en": [
+        "Baraclude"
+      ],
+      "brand_names_kr": [
+        "바라크루드",
+        "엔테카비르"
+      ],
+      "drug_class": "항바이러스제",
+      "drug_class_en": "Antiviral",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "중단시HBV재활성화",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "0.5mg/일",
+        "child_B": "0.5mg/일",
+        "child_C": "0.5mg/일"
+      },
+      "clinical_pearls": [
+        "HBV 간경변 치료의 근간",
+        "비대상성에서 젖산산증 드물게 보고"
+      ]
+    },
+    {
+      "id": "sofosbuvir-ledipasvir",
+      "name_en": "Ledipasvir/Sofosbuvir",
+      "name_kr": "레디파스비르/소포스부비르",
+      "brand_names_en": [
+        "Harvoni"
+      ],
+      "brand_names_kr": [
+        "하보니",
+        "레디파스비르소포스부비르"
+      ],
+      "drug_class": "DAA",
+      "drug_class_en": "Direct-acting antiviral",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "Ribavirin병용고려",
+        "child_C": "전문가상담"
+      },
+      "clinical_pearls": [
+        "HCV GT1 간경변에 효과적",
+        "Amiodarone 병용금기"
+      ]
+    },
+    {
+      "id": "glecaprevir-pibrentasvir",
+      "name_en": "Glecaprevir/Pibrentasvir",
+      "name_kr": "글레카프레비르/피브렌타스비르",
+      "brand_names_en": [
+        "Mavyret"
+      ],
+      "brand_names_kr": [
+        "마비렛",
+        "글레카프레비르피브렌타스비르"
+      ],
+      "drug_class": "DAA",
+      "drug_class_en": "Direct-acting antiviral",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "금기(PI포함)",
+        "child_C": "금기"
+      },
+      "clinical_pearls": [
+        "범유전자형",
+        "PI포함으로 Child-B/C 금기"
+      ]
+    },
+    {
+      "id": "sofosbuvir-velpatasvir",
+      "name_en": "Sofosbuvir/Velpatasvir",
+      "name_kr": "소포스부비르/벨파타스비르",
+      "brand_names_en": [
+        "Epclusa"
+      ],
+      "brand_names_kr": [
+        "엡클루사",
+        "소포스부비르벨파타스비르"
+      ],
+      "drug_class": "DAA",
+      "drug_class_en": "Direct-acting antiviral",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "Ribavirin병용",
+        "child_C": "Ribavirin병용"
+      },
+      "clinical_pearls": [
+        "비대상성 간경변에서도 사용가능",
+        "Amiodarone 병용금기"
+      ]
+    },
+    {
+      "id": "lamivudine",
+      "name_en": "Lamivudine",
+      "name_kr": "라미부딘",
+      "brand_names_en": [
+        "Epivir-HBV",
+        "Zeffix"
+      ],
+      "brand_names_kr": [
+        "제픽스",
+        "라미부딘"
+      ],
+      "drug_class": "항바이러스제",
+      "drug_class_en": "Antiviral",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "중단시HBV재활성화",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량(신기능확인)",
+        "child_C": "신기능기준, 1차부적합"
+      },
+      "clinical_pearls": [
+        "내성발현률 높아 1차치료 부적합",
+        "현재는 Tenofovir/Entecavir 선호"
+      ]
+    },
+    {
+      "id": "rifampin",
+      "name_en": "Rifampin",
+      "name_kr": "리팜핀",
+      "brand_names_en": [
+        "Rifadin"
+      ],
+      "brand_names_kr": [
+        "리팜핀",
+        "유한리팜피신"
+      ],
+      "drug_class": "항결핵제",
+      "drug_class_en": "Antitubercular",
+      "hepatotoxicity": {
+        "grade": "B",
+        "pattern": "hepatocellular",
+        "mechanism": "특이반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량, 주1회LFT",
+        "child_B": "8mg/kg/일, 주1-2회LFT",
+        "child_C": "가급적회피"
+      },
+      "clinical_pearls": [
+        "강력한 CYP유도제",
+        "INH병용시 간독성 증가"
+      ]
+    },
+    {
+      "id": "pyrazinamide",
+      "name_en": "Pyrazinamide",
+      "name_kr": "피라진아미드",
+      "brand_names_en": [
+        "Pyrazinamide"
+      ],
+      "brand_names_kr": [
+        "피라진아미드",
+        "유한피라진"
+      ],
+      "drug_class": "항결핵제",
+      "drug_class_en": "Antitubercular",
+      "hepatotoxicity": {
+        "grade": "A",
+        "pattern": "hepatocellular",
+        "mechanism": "용량의존적직접독성",
+        "dose_dependent": true
+      },
+      "cirrhosis_dosing": {
+        "child_A": "주의, 주1-2회LFT",
+        "child_B": "가급적회피",
+        "child_C": "금기"
+      },
+      "clinical_pearls": [
+        "항결핵제중 간독성 가장 높음",
+        "간경변에서 PZA없는 요법 고려"
+      ]
+    },
+    {
+      "id": "ethambutol",
+      "name_en": "Ethambutol",
+      "name_kr": "에탐부톨",
+      "brand_names_en": [
+        "Myambutol"
+      ],
+      "brand_names_kr": [
+        "에탐부톨",
+        "마이암부톨"
+      ],
+      "drug_class": "항결핵제",
+      "drug_class_en": "Antitubercular",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "간독성거의없음",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량",
+        "child_C": "통상용량"
+      },
+      "clinical_pearls": [
+        "간독성 거의 없어 간경변에서 안전",
+        "시신경염이 주요부작용"
+      ]
+    },
+    {
+      "id": "fluconazole",
+      "name_en": "Fluconazole",
+      "name_kr": "플루코나졸",
+      "brand_names_en": [
+        "Diflucan"
+      ],
+      "brand_names_kr": [
+        "디플루칸",
+        "플루코나졸"
+      ],
+      "drug_class": "아졸계항진균제",
+      "drug_class_en": "Azole antifungal",
+      "hepatotoxicity": {
+        "grade": "C",
+        "pattern": "hepatocellular",
+        "mechanism": "특이반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "50%감량고려",
+        "child_C": "50%감량"
+      },
+      "clinical_pearls": [
+        "아졸중 가장 안전한 편",
+        "QT연장 주의"
+      ]
+    },
+    {
+      "id": "itraconazole",
+      "name_en": "Itraconazole",
+      "name_kr": "이트라코나졸",
+      "brand_names_en": [
+        "Sporanox"
+      ],
+      "brand_names_kr": [
+        "스포라녹스",
+        "이트라코나졸"
+      ],
+      "drug_class": "아졸계항진균제",
+      "drug_class_en": "Azole antifungal",
+      "hepatotoxicity": {
+        "grade": "B",
+        "pattern": "mixed",
+        "mechanism": "특이반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "저용량시작",
+        "child_B": "가급적회피",
+        "child_C": "금기"
+      },
+      "clinical_pearls": [
+        "간경변에서 주의필요",
+        "심부전 악화가능"
+      ]
+    },
+    {
+      "id": "voriconazole",
+      "name_en": "Voriconazole",
+      "name_kr": "보리코나졸",
+      "brand_names_en": [
+        "Vfend"
+      ],
+      "brand_names_kr": [
+        "브이펜드",
+        "보리코나졸"
+      ],
+      "drug_class": "아졸계항진균제",
+      "drug_class_en": "Azole antifungal",
+      "hepatotoxicity": {
+        "grade": "B",
+        "pattern": "mixed",
+        "mechanism": "특이반응",
+        "dose_dependent": true
+      },
+      "cirrhosis_dosing": {
+        "child_A": "50%유지용량감량",
+        "child_B": "50%유지용량감량, TDM",
+        "child_C": "가급적회피"
+      },
+      "clinical_pearls": [
+        "침습성아스페르길루스증 1차",
+        "간경변에서 반드시 TDM"
+      ]
+    },
+    {
+      "id": "caspofungin",
+      "name_en": "Caspofungin",
+      "name_kr": "카스포펀진",
+      "brand_names_en": [
+        "Cancidas"
+      ],
+      "brand_names_kr": [
+        "칸시다스",
+        "카스포펀진"
+      ],
+      "drug_class": "에키노칸딘",
+      "drug_class_en": "Echinocandin",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "35mg/일유지",
+        "child_C": "35mg/일유지"
+      },
+      "clinical_pearls": [
+        "칸디다혈증 1차",
+        "Child-B/C에서 유지용량 35mg"
+      ]
+    },
+    {
+      "id": "esomeprazole",
+      "name_en": "Esomeprazole",
+      "name_kr": "에소메프라졸",
+      "brand_names_en": [
+        "Nexium"
+      ],
+      "brand_names_kr": [
+        "넥시움",
+        "에소메프라졸",
+        "에소메졸"
+      ],
+      "drug_class": "PPI",
+      "drug_class_en": "Proton pump inhibitor",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "20mg/일",
+        "child_C": "20mg/일초과금지"
+      },
+      "clinical_pearls": [
+        "간경변에서 장기PPI와 SBP위험 논란",
+        "필요시에만 단기간 사용"
+      ]
+    },
+    {
+      "id": "pantoprazole",
+      "name_en": "Pantoprazole",
+      "name_kr": "판토프라졸",
+      "brand_names_en": [
+        "Protonix"
+      ],
+      "brand_names_kr": [
+        "판토록",
+        "판토프라졸",
+        "팬토졸"
+      ],
+      "drug_class": "PPI",
+      "drug_class_en": "Proton pump inhibitor",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "40mg격일고려",
+        "child_C": "40mg격일"
+      },
+      "clinical_pearls": [
+        "CYP상호작용 적음",
+        "간경변에서 상대적으로 선호"
+      ]
+    },
+    {
+      "id": "omeprazole",
+      "name_en": "Omeprazole",
+      "name_kr": "오메프라졸",
+      "brand_names_en": [
+        "Prilosec"
+      ],
+      "brand_names_kr": [
+        "로섹",
+        "오메프라졸"
+      ],
+      "drug_class": "PPI",
+      "drug_class_en": "Proton pump inhibitor",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "10-20mg/일",
+        "child_C": "10-20mg/일"
+      },
+      "clinical_pearls": [
+        "CYP2C19 상호작용",
+        "간경변에서 반감기 연장"
+      ]
+    },
+    {
+      "id": "famotidine",
+      "name_en": "Famotidine",
+      "name_kr": "파모티딘",
+      "brand_names_en": [
+        "Pepcid"
+      ],
+      "brand_names_kr": [
+        "가스터",
+        "파모티딘"
+      ],
+      "drug_class": "H2차단제",
+      "drug_class_en": "H2 blocker",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "극히드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량",
+        "child_C": "통상용량(신기능기준)"
+      },
+      "clinical_pearls": [
+        "간경변에서 비교적 안전",
+        "PPI 대안"
+      ]
+    },
+    {
+      "id": "metformin",
+      "name_en": "Metformin",
+      "name_kr": "메트포르민",
+      "brand_names_en": [
+        "Glucophage"
+      ],
+      "brand_names_kr": [
+        "글루코파지",
+        "메트포르민",
+        "다이아벡스"
+      ],
+      "drug_class": "비구아나이드",
+      "drug_class_en": "Biguanide",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "젖산산증이 주요우려",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량(신기능확인)",
+        "child_B": "저용량, 젖산모니터링",
+        "child_C": "금기"
+      },
+      "clinical_pearls": [
+        "비대상성에서 젖산산증 위험",
+        "NAFLD에서 도움가능"
+      ]
+    },
+    {
+      "id": "sitagliptin",
+      "name_en": "Sitagliptin",
+      "name_kr": "시타글립틴",
+      "brand_names_en": [
+        "Januvia"
+      ],
+      "brand_names_kr": [
+        "자누비아",
+        "시타글립틴"
+      ],
+      "drug_class": "DPP-4억제제",
+      "drug_class_en": "DPP-4 inhibitor",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량",
+        "child_C": "통상용량(신기능기준)"
+      },
+      "clinical_pearls": [
+        "간경변에서 비교적 안전",
+        "저혈당 위험 낮음"
+      ]
+    },
+    {
+      "id": "linagliptin",
+      "name_en": "Linagliptin",
+      "name_kr": "리나글립틴",
+      "brand_names_en": [
+        "Tradjenta"
+      ],
+      "brand_names_kr": [
+        "트라젠타",
+        "리나글립틴"
+      ],
+      "drug_class": "DPP-4억제제",
+      "drug_class_en": "DPP-4 inhibitor",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량",
+        "child_C": "통상용량"
+      },
+      "clinical_pearls": [
+        "간/신기능 관계없이 용량조절 불필요",
+        "간경변 당뇨에 좋은 선택"
+      ]
+    },
+    {
+      "id": "empagliflozin",
+      "name_en": "Empagliflozin",
+      "name_kr": "엠파글리플로진",
+      "brand_names_en": [
+        "Jardiance"
+      ],
+      "brand_names_kr": [
+        "자디앙",
+        "엠파글리플로진"
+      ],
+      "drug_class": "SGLT2억제제",
+      "drug_class_en": "SGLT2 inhibitor",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "주의사용",
+        "child_C": "권장되지않음"
+      },
+      "clinical_pearls": [
+        "심부전/CKD 혜택",
+        "복수환자에 탈수위험"
+      ]
+    },
+    {
+      "id": "pioglitazone",
+      "name_en": "Pioglitazone",
+      "name_kr": "피오글리타존",
+      "brand_names_en": [
+        "Actos"
+      ],
+      "brand_names_kr": [
+        "액토스",
+        "피오글리타존"
+      ],
+      "drug_class": "티아졸리딘디온",
+      "drug_class_en": "Thiazolidinedione",
+      "hepatotoxicity": {
+        "grade": "C",
+        "pattern": "hepatocellular",
+        "mechanism": "특이반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "저용량주의",
+        "child_B": "가급적회피",
+        "child_C": "금기"
+      },
+      "clinical_pearls": [
+        "NASH에서 효과있으나 간경변은 금기",
+        "체액저류 악화"
+      ]
+    },
+    {
+      "id": "glimepiride",
+      "name_en": "Glimepiride",
+      "name_kr": "글리메피리드",
+      "brand_names_en": [
+        "Amaryl"
+      ],
+      "brand_names_kr": [
+        "아마릴",
+        "글리메피리드"
+      ],
+      "drug_class": "설폰요소제",
+      "drug_class_en": "Sulfonylurea",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "cholestatic",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "저용량시작",
+        "child_B": "가급적회피",
+        "child_C": "금기"
+      },
+      "clinical_pearls": [
+        "간경변에서 저혈당 위험 증가",
+        "인슐린이 더 안전"
+      ]
+    },
+    {
+      "id": "gliclazide",
+      "name_en": "Gliclazide",
+      "name_kr": "글리클라지드",
+      "brand_names_en": [
+        "Diamicron"
+      ],
+      "brand_names_kr": [
+        "다이아미크롱",
+        "글리클라지드"
+      ],
+      "drug_class": "설폰요소제",
+      "drug_class_en": "Sulfonylurea",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "저용량시작",
+        "child_B": "주의사용",
+        "child_C": "가급적회피"
+      },
+      "clinical_pearls": [
+        "SU중 비교적 안전",
+        "저혈당 주의"
+      ]
+    },
+    {
+      "id": "insulin",
+      "name_en": "Insulin",
+      "name_kr": "인슐린",
+      "brand_names_en": [
+        "Humulin",
+        "Novolin",
+        "Lantus",
+        "NovoRapid"
+      ],
+      "brand_names_kr": [
+        "휴물린",
+        "노보린",
+        "란투스",
+        "노보래피드"
+      ],
+      "drug_class": "인슐린",
+      "drug_class_en": "Insulin",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "없음",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량",
+        "child_C": "통상용량, 저혈당주의"
+      },
+      "clinical_pearls": [
+        "간경변 당뇨에 가장 안전",
+        "저혈당 발생시 회복 지연가능"
+      ]
+    },
+    {
+      "id": "amlodipine",
+      "name_en": "Amlodipine",
+      "name_kr": "암로디핀",
+      "brand_names_en": [
+        "Norvasc"
+      ],
+      "brand_names_kr": [
+        "노바스크",
+        "암로디핀",
+        "아모디핀"
+      ],
+      "drug_class": "칼슘채널차단제",
+      "drug_class_en": "CCB",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "2.5-5mg시작",
+        "child_B": "2.5mg시작",
+        "child_C": "2.5mg시작, 주의"
+      },
+      "clinical_pearls": [
+        "간경변에서 반감기 연장",
+        "저용량 시작"
+      ]
+    },
+    {
+      "id": "losartan",
+      "name_en": "Losartan",
+      "name_kr": "로사르탄",
+      "brand_names_en": [
+        "Cozaar"
+      ],
+      "brand_names_kr": [
+        "코자",
+        "로사르탄"
+      ],
+      "drug_class": "ARB",
+      "drug_class_en": "ARB",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "25mg시작",
+        "child_B": "25mg시작, 주의",
+        "child_C": "가급적회피"
+      },
+      "clinical_pearls": [
+        "초회통과 감소로 생체이용률 증가",
+        "간경변에서 저용량"
+      ]
+    },
+    {
+      "id": "valsartan",
+      "name_en": "Valsartan",
+      "name_kr": "발사르탄",
+      "brand_names_en": [
+        "Diovan"
+      ],
+      "brand_names_kr": [
+        "디오반",
+        "발사르탄"
+      ],
+      "drug_class": "ARB",
+      "drug_class_en": "ARB",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "40mg시작",
+        "child_B": "40mg, 주의",
+        "child_C": "가급적회피"
+      },
+      "clinical_pearls": [
+        "담즙배설 의존",
+        "간경변에서 감량"
+      ]
+    },
+    {
+      "id": "lisinopril",
+      "name_en": "Lisinopril",
+      "name_kr": "리시노프릴",
+      "brand_names_en": [
+        "Zestril",
+        "Prinivil"
+      ],
+      "brand_names_kr": [
+        "제스트릴",
+        "리시노프릴"
+      ],
+      "drug_class": "ACE억제제",
+      "drug_class_en": "ACE inhibitor",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "cholestatic",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량",
+        "child_C": "주의(신기능)"
+      },
+      "clinical_pearls": [
+        "간대사 없음",
+        "간경변에서 비교적 안전"
+      ]
+    },
+    {
+      "id": "ramipril",
+      "name_en": "Ramipril",
+      "name_kr": "라미프릴",
+      "brand_names_en": [
+        "Altace"
+      ],
+      "brand_names_kr": [
+        "트리테이스",
+        "라미프릴"
+      ],
+      "drug_class": "ACE억제제",
+      "drug_class_en": "ACE inhibitor",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "cholestatic",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "저용량시작",
+        "child_B": "저용량",
+        "child_C": "주의사용"
+      },
+      "clinical_pearls": [
+        "간경변에서 비교적 안전",
+        "신기능 모니터링"
+      ]
+    },
+    {
+      "id": "bisoprolol",
+      "name_en": "Bisoprolol",
+      "name_kr": "비소프롤롤",
+      "brand_names_en": [
+        "Zebeta"
+      ],
+      "brand_names_kr": [
+        "콩코르",
+        "비소프롤롤"
+      ],
+      "drug_class": "베타차단제",
+      "drug_class_en": "Beta blocker",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "저용량시작",
+        "child_C": "저용량시작"
+      },
+      "clinical_pearls": [
+        "간경변에서 비교적 안전",
+        "정맥류예방에는 비선택적 BB 필요"
+      ]
+    },
+    {
+      "id": "diltiazem",
+      "name_en": "Diltiazem",
+      "name_kr": "딜티아젬",
+      "brand_names_en": [
+        "Cardizem",
+        "Dilacor"
+      ],
+      "brand_names_kr": [
+        "헤르벤",
+        "딜티아젬"
+      ],
+      "drug_class": "칼슘채널차단제",
+      "drug_class_en": "CCB",
+      "hepatotoxicity": {
+        "grade": "C",
+        "pattern": "mixed",
+        "mechanism": "특이반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "30-60mg tid",
+        "child_B": "30mg tid 시작",
+        "child_C": "주의사용"
+      },
+      "clinical_pearls": [
+        "간대사 의존",
+        "간경변에서 감량필요"
+      ]
+    },
+    {
+      "id": "warfarin",
+      "name_en": "Warfarin",
+      "name_kr": "와파린",
+      "brand_names_en": [
+        "Coumadin"
+      ],
+      "brand_names_kr": [
+        "쿠마딘",
+        "와파린"
+      ],
+      "drug_class": "항응고제",
+      "drug_class_en": "Anticoagulant",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "저용량시작, INR자주",
+        "child_B": "저용량, INR면밀",
+        "child_C": "주의, INR변동큼"
+      },
+      "clinical_pearls": [
+        "간경변에서 INR 해석 어려움",
+        "낮은 용량으로 시작"
+      ]
+    },
+    {
+      "id": "rivaroxaban",
+      "name_en": "Rivaroxaban",
+      "name_kr": "리바록사반",
+      "brand_names_en": [
+        "Xarelto"
+      ],
+      "brand_names_kr": [
+        "자렐토",
+        "리바록사반"
+      ],
+      "drug_class": "DOAC",
+      "drug_class_en": "DOAC",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "주의, 데이터제한",
+        "child_C": "금기"
+      },
+      "clinical_pearls": [
+        "Child-B에서 주의",
+        "Child-C에서 금기"
+      ]
+    },
+    {
+      "id": "apixaban",
+      "name_en": "Apixaban",
+      "name_kr": "아픽사반",
+      "brand_names_en": [
+        "Eliquis"
+      ],
+      "brand_names_kr": [
+        "엘리퀴스",
+        "아픽사반"
+      ],
+      "drug_class": "DOAC",
+      "drug_class_en": "DOAC",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "주의사용",
+        "child_C": "금기"
+      },
+      "clinical_pearls": [
+        "DOAC중 비교적 안전한편",
+        "Child-C에서 금기"
+      ]
+    },
+    {
+      "id": "edoxaban",
+      "name_en": "Edoxaban",
+      "name_kr": "에독사반",
+      "brand_names_en": [
+        "Savaysa",
+        "Lixiana"
+      ],
+      "brand_names_kr": [
+        "릭시아나",
+        "에독사반"
+      ],
+      "drug_class": "DOAC",
+      "drug_class_en": "DOAC",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "주의",
+        "child_C": "금기"
+      },
+      "clinical_pearls": [
+        "Child-C에서 금기",
+        "간대사 제한적"
+      ]
+    },
+    {
+      "id": "dabigatran",
+      "name_en": "Dabigatran",
+      "name_kr": "다비가트란",
+      "brand_names_en": [
+        "Pradaxa"
+      ],
+      "brand_names_kr": [
+        "프라닥사",
+        "다비가트란"
+      ],
+      "drug_class": "DOAC",
+      "drug_class_en": "DOAC",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량(주의)",
+        "child_C": "데이터제한"
+      },
+      "clinical_pearls": [
+        "간대사 적음",
+        "신배설 의존"
+      ]
+    },
+    {
+      "id": "aspirin",
+      "name_en": "Aspirin",
+      "name_kr": "아스피린",
+      "brand_names_en": [
+        "Aspirin",
+        "Bayer"
+      ],
+      "brand_names_kr": [
+        "아스피린",
+        "바이엘아스피린"
+      ],
+      "drug_class": "항혈소판제",
+      "drug_class_en": "Antiplatelet",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "고용량시",
+        "dose_dependent": true
+      },
+      "cirrhosis_dosing": {
+        "child_A": "저용량가능",
+        "child_B": "주의, 출혈위험",
+        "child_C": "가급적회피"
+      },
+      "clinical_pearls": [
+        "간경변에서 출혈위험 증가",
+        "저용량도 주의"
+      ]
+    },
+    {
+      "id": "clopidogrel",
+      "name_en": "Clopidogrel",
+      "name_kr": "클로피도그렐",
+      "brand_names_en": [
+        "Plavix"
+      ],
+      "brand_names_kr": [
+        "플라빅스",
+        "클로피도그렐"
+      ],
+      "drug_class": "항혈소판제",
+      "drug_class_en": "Antiplatelet",
+      "hepatotoxicity": {
+        "grade": "C",
+        "pattern": "mixed",
+        "mechanism": "특이반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "주의",
+        "child_C": "주의, 효과감소가능"
+      },
+      "clinical_pearls": [
+        "전구약물 - 간대사필요",
+        "간경변에서 활성화 감소가능"
+      ]
+    },
+    {
+      "id": "sertraline",
+      "name_en": "Sertraline",
+      "name_kr": "설트랄린",
+      "brand_names_en": [
+        "Zoloft"
+      ],
+      "brand_names_kr": [
+        "졸로푸트",
+        "설트랄린"
+      ],
+      "drug_class": "SSRI",
+      "drug_class_en": "SSRI",
+      "hepatotoxicity": {
+        "grade": "C",
+        "pattern": "hepatocellular",
+        "mechanism": "특이반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "저용량시작",
+        "child_B": "50%감량",
+        "child_C": "25mg시작, 최소용량"
+      },
+      "clinical_pearls": [
+        "SSRI중 비교적 안전",
+        "간경변에서 감량필요"
+      ]
+    },
+    {
+      "id": "escitalopram",
+      "name_en": "Escitalopram",
+      "name_kr": "에스시탈로프람",
+      "brand_names_en": [
+        "Lexapro"
+      ],
+      "brand_names_kr": [
+        "렉사프로",
+        "에스시탈로프람"
+      ],
+      "drug_class": "SSRI",
+      "drug_class_en": "SSRI",
+      "hepatotoxicity": {
+        "grade": "C",
+        "pattern": "hepatocellular",
+        "mechanism": "특이반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "10mg시작",
+        "child_B": "5mg시작",
+        "child_C": "5mg시작"
+      },
+      "clinical_pearls": [
+        "50% 감량 권장",
+        "간경변에서 청소율 감소"
+      ]
+    },
+    {
+      "id": "fluoxetine",
+      "name_en": "Fluoxetine",
+      "name_kr": "플루옥세틴",
+      "brand_names_en": [
+        "Prozac"
+      ],
+      "brand_names_kr": [
+        "프로작",
+        "플루옥세틴"
+      ],
+      "drug_class": "SSRI",
+      "drug_class_en": "SSRI",
+      "hepatotoxicity": {
+        "grade": "C",
+        "pattern": "hepatocellular",
+        "mechanism": "특이반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "저용량시작",
+        "child_B": "저용량, 격일고려",
+        "child_C": "가급적회피"
+      },
+      "clinical_pearls": [
+        "반감기 매우 김",
+        "간경변에서 축적위험"
+      ]
+    },
+    {
+      "id": "mirtazapine",
+      "name_en": "Mirtazapine",
+      "name_kr": "미르타자핀",
+      "brand_names_en": [
+        "Remeron"
+      ],
+      "brand_names_kr": [
+        "레메론",
+        "미르타자핀"
+      ],
+      "drug_class": "항우울제",
+      "drug_class_en": "Antidepressant",
+      "hepatotoxicity": {
+        "grade": "C",
+        "pattern": "hepatocellular",
+        "mechanism": "특이반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "7.5mg시작",
+        "child_B": "7.5mg시작",
+        "child_C": "7.5mg시작, 주의"
+      },
+      "clinical_pearls": [
+        "간경변에서 청소율 30% 감소",
+        "진정작용 주의"
+      ]
+    },
+    {
+      "id": "trazodone",
+      "name_en": "Trazodone",
+      "name_kr": "트라조돈",
+      "brand_names_en": [
+        "Desyrel"
+      ],
+      "brand_names_kr": [
+        "트리티코",
+        "트라조돈"
+      ],
+      "drug_class": "항우울제",
+      "drug_class_en": "Antidepressant",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "저용량시작",
+        "child_B": "저용량",
+        "child_C": "저용량, 진정주의"
+      },
+      "clinical_pearls": [
+        "불면에 저용량 사용",
+        "진정작용으로 간성뇌증 주의"
+      ]
+    },
+    {
+      "id": "duloxetine",
+      "name_en": "Duloxetine",
+      "name_kr": "둘록세틴",
+      "brand_names_en": [
+        "Cymbalta"
+      ],
+      "brand_names_kr": [
+        "심발타",
+        "둘록세틴"
+      ],
+      "drug_class": "SNRI",
+      "drug_class_en": "SNRI",
+      "hepatotoxicity": {
+        "grade": "B",
+        "pattern": "hepatocellular",
+        "mechanism": "직접독성가능",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "주의사용",
+        "child_B": "금기",
+        "child_C": "금기"
+      },
+      "clinical_pearls": [
+        "간독성 보고 다수",
+        "간경변에서 금기"
+      ]
+    },
+    {
+      "id": "lorazepam",
+      "name_en": "Lorazepam",
+      "name_kr": "로라제팜",
+      "brand_names_en": [
+        "Ativan"
+      ],
+      "brand_names_kr": [
+        "아티반",
+        "로라제팜"
+      ],
+      "drug_class": "벤조디아제핀",
+      "drug_class_en": "Benzodiazepine",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량",
+        "child_C": "통상용량, 진정주의"
+      },
+      "clinical_pearls": [
+        "간대사 적어 간경변에서 선호",
+        "glucuronidation만"
+      ]
+    },
+    {
+      "id": "oxazepam",
+      "name_en": "Oxazepam",
+      "name_kr": "옥사제팜",
+      "brand_names_en": [
+        "Serax"
+      ],
+      "brand_names_kr": [
+        "옥사제팜"
+      ],
+      "drug_class": "벤조디아제핀",
+      "drug_class_en": "Benzodiazepine",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량",
+        "child_C": "통상용량"
+      },
+      "clinical_pearls": [
+        "간대사 적어 간경변에서 선호",
+        "Lorazepam과 함께 안전한 선택"
+      ]
+    },
+    {
+      "id": "zolpidem",
+      "name_en": "Zolpidem",
+      "name_kr": "졸피뎀",
+      "brand_names_en": [
+        "Ambien"
+      ],
+      "brand_names_kr": [
+        "스틸녹스",
+        "졸피뎀"
+      ],
+      "drug_class": "수면제",
+      "drug_class_en": "Hypnotic",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "5mg",
+        "child_B": "5mg",
+        "child_C": "5mg, 간성뇌증주의"
+      },
+      "clinical_pearls": [
+        "5mg으로 감량",
+        "간성뇌증 주의"
+      ]
+    },
+    {
+      "id": "melatonin",
+      "name_en": "Melatonin",
+      "name_kr": "멜라토닌",
+      "brand_names_en": [
+        "Melatonin"
+      ],
+      "brand_names_kr": [
+        "멜라토닌"
+      ],
+      "drug_class": "수면보조제",
+      "drug_class_en": "Sleep aid",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "없음",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량",
+        "child_C": "통상용량"
+      },
+      "clinical_pearls": [
+        "간경변에서 비교적 안전",
+        "일주기리듬 교정"
+      ]
+    },
+    {
+      "id": "morphine",
+      "name_en": "Morphine",
+      "name_kr": "모르핀",
+      "brand_names_en": [
+        "MS Contin",
+        "Kadian"
+      ],
+      "brand_names_kr": [
+        "모르핀",
+        "엠에스콘틴"
+      ],
+      "drug_class": "오피오이드",
+      "drug_class_en": "Opioid",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "없음",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "50%감량",
+        "child_B": "50%감량, 간격연장",
+        "child_C": "75%감량 또는 회피"
+      },
+      "clinical_pearls": [
+        "반감기 2배 연장",
+        "서방형 회피"
+      ]
+    },
+    {
+      "id": "oxycodone",
+      "name_en": "Oxycodone",
+      "name_kr": "옥시코돈",
+      "brand_names_en": [
+        "OxyContin",
+        "Percocet"
+      ],
+      "brand_names_kr": [
+        "옥시콘틴",
+        "타진",
+        "옥시코돈"
+      ],
+      "drug_class": "오피오이드",
+      "drug_class_en": "Opioid",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "없음",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "50%감량",
+        "child_B": "50-75%감량",
+        "child_C": "75%감량, 서방형회피"
+      },
+      "clinical_pearls": [
+        "간경변에서 감량필요",
+        "서방형 회피"
+      ]
+    },
+    {
+      "id": "fentanyl",
+      "name_en": "Fentanyl",
+      "name_kr": "펜타닐",
+      "brand_names_en": [
+        "Duragesic",
+        "Sublimaze"
+      ],
+      "brand_names_kr": [
+        "펜타닐",
+        "듀로제식"
+      ],
+      "drug_class": "오피오이드",
+      "drug_class_en": "Opioid",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "없음",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량(주의)",
+        "child_C": "주의사용"
+      },
+      "clinical_pearls": [
+        "간경변에서 비교적 안전",
+        "패치는 흡수지연 가능"
+      ]
+    },
+    {
+      "id": "pregabalin",
+      "name_en": "Pregabalin",
+      "name_kr": "프레가발린",
+      "brand_names_en": [
+        "Lyrica"
+      ],
+      "brand_names_kr": [
+        "리리카",
+        "프레가발린"
+      ],
+      "drug_class": "항경련제/진통제",
+      "drug_class_en": "Anticonvulsant",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "없음",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량",
+        "child_C": "통상용량(신기능기준)"
+      },
+      "clinical_pearls": [
+        "신배설 의존",
+        "간경변에서 비교적 안전"
+      ]
+    },
+    {
+      "id": "prednisolone",
+      "name_en": "Prednisolone",
+      "name_kr": "프레드니솔론",
+      "brand_names_en": [
+        "Prelone"
+      ],
+      "brand_names_kr": [
+        "소론도",
+        "프레드니솔론"
+      ],
+      "drug_class": "스테로이드",
+      "drug_class_en": "Corticosteroid",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "없음",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량",
+        "child_C": "통상용량"
+      },
+      "clinical_pearls": [
+        "알코올간염, AIH 치료",
+        "Prednisone보다 선호(활성형)"
+      ]
+    },
+    {
+      "id": "budesonide",
+      "name_en": "Budesonide",
+      "name_kr": "부데소니드",
+      "brand_names_en": [
+        "Entocort"
+      ],
+      "brand_names_kr": [
+        "부데소니드",
+        "엔토코트"
+      ],
+      "drug_class": "스테로이드",
+      "drug_class_en": "Corticosteroid",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "없음",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "AIH에사용가능",
+        "child_B": "금기(초회통과감소)",
+        "child_C": "금기"
+      },
+      "clinical_pearls": [
+        "비경변AIH에서 사용",
+        "간경변에서는 전신효과 증가로 금기"
+      ]
+    },
+    {
+      "id": "azithromycin",
+      "name_en": "Azithromycin",
+      "name_kr": "아지트로마이신",
+      "brand_names_en": [
+        "Zithromax",
+        "Z-pack"
+      ],
+      "brand_names_kr": [
+        "지스로맥스",
+        "아지트로마이신"
+      ],
+      "drug_class": "마크로라이드",
+      "drug_class_en": "Macrolide",
+      "hepatotoxicity": {
+        "grade": "C",
+        "pattern": "cholestatic",
+        "mechanism": "담즙정체",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량(주의)",
+        "child_C": "주의사용"
+      },
+      "clinical_pearls": [
+        "담즙정체형 간손상 보고",
+        "QT연장 주의"
+      ]
+    },
+    {
+      "id": "clarithromycin",
+      "name_en": "Clarithromycin",
+      "name_kr": "클라리트로마이신",
+      "brand_names_en": [
+        "Biaxin"
+      ],
+      "brand_names_kr": [
+        "클라리시드",
+        "클라리트로마이신"
+      ],
+      "drug_class": "마크로라이드",
+      "drug_class_en": "Macrolide",
+      "hepatotoxicity": {
+        "grade": "C",
+        "pattern": "cholestatic",
+        "mechanism": "담즙정체",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "50%감량",
+        "child_C": "50%감량"
+      },
+      "clinical_pearls": [
+        "CYP3A4 억제 강력",
+        "다수 약물상호작용"
+      ]
+    },
+    {
+      "id": "doxycycline",
+      "name_en": "Doxycycline",
+      "name_kr": "독시사이클린",
+      "brand_names_en": [
+        "Vibramycin"
+      ],
+      "brand_names_kr": [
+        "독시사이클린",
+        "비브라마이신"
+      ],
+      "drug_class": "테트라사이클린",
+      "drug_class_en": "Tetracycline",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량",
+        "child_C": "통상용량"
+      },
+      "clinical_pearls": [
+        "간경변에서 비교적 안전",
+        "신기능 조절 불필요"
+      ]
+    },
+    {
+      "id": "allopurinol",
+      "name_en": "Allopurinol",
+      "name_kr": "알로퓨리놀",
+      "brand_names_en": [
+        "Zyloprim"
+      ],
+      "brand_names_kr": [
+        "자이로릭",
+        "알로퓨리놀"
+      ],
+      "drug_class": "통풍치료제",
+      "drug_class_en": "Xanthine oxidase inhibitor",
+      "hepatotoxicity": {
+        "grade": "B",
+        "pattern": "mixed",
+        "mechanism": "과민반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "저용량시작",
+        "child_B": "저용량",
+        "child_C": "저용량, 주의"
+      },
+      "clinical_pearls": [
+        "과민반응증후군 주의",
+        "Azathioprine 병용시 1/4로 감량"
+      ]
+    },
+    {
+      "id": "colchicine",
+      "name_en": "Colchicine",
+      "name_kr": "콜히친",
+      "brand_names_en": [
+        "Colcrys"
+      ],
+      "brand_names_kr": [
+        "콜킨",
+        "콜히친"
+      ],
+      "drug_class": "통풍치료제",
+      "drug_class_en": "Antigout",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": true
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "감량(0.3mg bid)",
+        "child_C": "0.3mg qd 또는 회피"
+      },
+      "clinical_pearls": [
+        "간대사 의존",
+        "중증 간장애에서 감량"
+      ]
+    },
+    {
+      "id": "ondansetron",
+      "name_en": "Ondansetron",
+      "name_kr": "온단세트론",
+      "brand_names_en": [
+        "Zofran"
+      ],
+      "brand_names_kr": [
+        "조프란",
+        "온단세트론"
+      ],
+      "drug_class": "항구토제",
+      "drug_class_en": "Antiemetic",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "8mg 1회제한",
+        "child_C": "8mg 1회제한"
+      },
+      "clinical_pearls": [
+        "간경변에서 청소율 감소",
+        "QT연장 주의"
+      ]
+    },
+    {
+      "id": "metoclopramide",
+      "name_en": "Metoclopramide",
+      "name_kr": "메토클로프라미드",
+      "brand_names_en": [
+        "Reglan"
+      ],
+      "brand_names_kr": [
+        "맥페란",
+        "메토클로프라미드"
+      ],
+      "drug_class": "위장관운동촉진제",
+      "drug_class_en": "Prokinetic",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "50%감량",
+        "child_C": "50%감량"
+      },
+      "clinical_pearls": [
+        "추체외로증상 주의",
+        "간경변에서 반감기 연장"
+      ]
+    },
+    {
+      "id": "levothyroxine",
+      "name_en": "Levothyroxine",
+      "name_kr": "레보티록신",
+      "brand_names_en": [
+        "Synthroid",
+        "Levoxyl"
+      ],
+      "brand_names_kr": [
+        "씬지로이드",
+        "레보티록신"
+      ],
+      "drug_class": "갑상선호르몬",
+      "drug_class_en": "Thyroid hormone",
+      "hepatotoxicity": {
+        "grade": "E",
+        "pattern": "none",
+        "mechanism": "없음",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량",
+        "child_C": "통상용량"
+      },
+      "clinical_pearls": [
+        "간경변에서 안전",
+        "T4→T3 전환은 간외조직에서도"
+      ]
+    },
+    {
+      "id": "methimazole",
+      "name_en": "Methimazole",
+      "name_kr": "메티마졸",
+      "brand_names_en": [
+        "Tapazole"
+      ],
+      "brand_names_kr": [
+        "메티마졸",
+        "안티로이드"
+      ],
+      "drug_class": "항갑상선제",
+      "drug_class_en": "Antithyroid",
+      "hepatotoxicity": {
+        "grade": "C",
+        "pattern": "cholestatic",
+        "mechanism": "담즙정체",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량(주의)",
+        "child_B": "저용량시작",
+        "child_C": "주의사용"
+      },
+      "clinical_pearls": [
+        "담즙정체형 간손상",
+        "PTU보다 안전한편"
+      ]
+    },
+    {
+      "id": "propylthiouracil",
+      "name_en": "Propylthiouracil",
+      "name_kr": "프로필티오우라실",
+      "brand_names_en": [
+        "PTU"
+      ],
+      "brand_names_kr": [
+        "안티로이드",
+        "프로필티오우라실"
+      ],
+      "drug_class": "항갑상선제",
+      "drug_class_en": "Antithyroid",
+      "hepatotoxicity": {
+        "grade": "A",
+        "pattern": "hepatocellular",
+        "mechanism": "직접독성, 면역매개",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "가급적회피",
+        "child_B": "금기",
+        "child_C": "금기"
+      },
+      "clinical_pearls": [
+        "급성간부전 보고",
+        "Methimazole이 더 안전"
+      ]
+    },
+    {
+      "id": "tmp-smx",
+      "name_en": "Trimethoprim-Sulfamethoxazole",
+      "name_kr": "트리메토프림-설파메톡사졸",
+      "brand_names_en": [
+        "Bactrim",
+        "Septra"
+      ],
+      "brand_names_kr": [
+        "박트림",
+        "셉트라",
+        "트리메토프림설파메톡사졸"
+      ],
+      "drug_class": "설폰아미드항생제",
+      "drug_class_en": "Sulfonamide",
+      "hepatotoxicity": {
+        "grade": "B",
+        "pattern": "cholestatic",
+        "mechanism": "설파 과민반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "주의사용",
+        "child_C": "가급적회피"
+      },
+      "clinical_pearls": [
+        "설파알레르기 주의",
+        "담즙정체형 간손상"
+      ]
+    },
+    {
+      "id": "linezolid",
+      "name_en": "Linezolid",
+      "name_kr": "리네졸리드",
+      "brand_names_en": [
+        "Zyvox"
+      ],
+      "brand_names_kr": [
+        "자이복스",
+        "리네졸리드"
+      ],
+      "drug_class": "옥사졸리디논",
+      "drug_class_en": "Oxazolidinone",
+      "hepatotoxicity": {
+        "grade": "D",
+        "pattern": "hepatocellular",
+        "mechanism": "드묾",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량",
+        "child_C": "통상용량"
+      },
+      "clinical_pearls": [
+        "간경변에서 용량조절 불필요",
+        "골수억제, 젖산산증 주의"
+      ]
+    },
+    {
+      "id": "clindamycin",
+      "name_en": "Clindamycin",
+      "name_kr": "클린다마이신",
+      "brand_names_en": [
+        "Cleocin"
+      ],
+      "brand_names_kr": [
+        "클레오신",
+        "클린다마이신"
+      ],
+      "drug_class": "린코사미드",
+      "drug_class_en": "Lincosamide",
+      "hepatotoxicity": {
+        "grade": "C",
+        "pattern": "hepatocellular",
+        "mechanism": "특이반응",
+        "dose_dependent": false
+      },
+      "cirrhosis_dosing": {
+        "child_A": "통상용량",
+        "child_B": "통상용량(주의)",
+        "child_C": "주의, 간격연장고려"
+      },
+      "clinical_pearls": [
+        "간대사 의존",
+        "C.diff 감염 위험"
+      ]
+    }
+  ],
+  "search_index": [
+    {
+      "id": "acetaminophen",
+      "terms": [
+        "acetaminophen",
+        "아세트아미노펜",
+        "tylenol",
+        "panadol",
+        "타이레놀",
+        "써스펜",
+        "게보린",
+        "펜잘",
+        "타이레놀8시간이알"
+      ]
+    },
+    {
+      "id": "ibuprofen",
+      "terms": [
+        "ibuprofen",
+        "이부프로펜",
+        "advil",
+        "brufen",
+        "motrin",
+        "부루펜",
+        "애드빌",
+        "이지엔6",
+        "캐롤에프"
+      ]
+    },
+    {
+      "id": "naproxen",
+      "terms": [
+        "naproxen",
+        "나프록센",
+        "naprosyn",
+        "aleve",
+        "낙센",
+        "탁센",
+        "나프록센"
+      ]
+    },
+    {
+      "id": "celecoxib",
+      "terms": [
+        "celecoxib",
+        "셀레콕시브",
+        "celebrex",
+        "쎄레브렉스",
+        "셀레콕시브"
+      ]
+    },
+    {
+      "id": "tramadol",
+      "terms": [
+        "tramadol",
+        "트라마돌",
+        "ultram",
+        "tramal",
+        "트리돌",
+        "트라몰",
+        "마트리돌"
+      ]
+    },
+    {
+      "id": "piperacillin-tazobactam",
+      "terms": [
+        "piperacillin-tazobactam",
+        "피페라실린-타조박탐",
+        "zosyn",
+        "tazocin",
+        "타조신",
+        "타조페란",
+        "피페란"
+      ]
+    },
+    {
+      "id": "ceftriaxone",
+      "terms": [
+        "ceftriaxone",
+        "세프트리악손",
+        "rocephin",
+        "로세핀",
+        "트리악손",
+        "세프트론"
+      ]
+    },
+    {
+      "id": "cefotaxime",
+      "terms": [
+        "cefotaxime",
+        "세포탁심",
+        "claforan",
+        "클라포란",
+        "세포탁심",
+        "세프탁스"
+      ]
+    },
+    {
+      "id": "metronidazole",
+      "terms": [
+        "metronidazole",
+        "메트로니다졸",
+        "flagyl",
+        "후라시닐",
+        "메트로니다졸",
+        "트리코졸"
+      ]
+    },
+    {
+      "id": "meropenem",
+      "terms": [
+        "meropenem",
+        "메로페넴",
+        "merrem",
+        "메로페넴",
+        "메렘",
+        "페넴시아"
+      ]
+    },
+    {
+      "id": "teicoplanin",
+      "terms": [
+        "teicoplanin",
+        "테이코플라닌",
+        "targocid",
+        "타고시드",
+        "테이코플라닌"
+      ]
+    },
+    {
+      "id": "vancomycin",
+      "terms": [
+        "vancomycin",
+        "반코마이신",
+        "vancocin",
+        "반코마이신",
+        "반코신"
+      ]
+    },
+    {
+      "id": "cefazolin",
+      "terms": [
+        "cefazolin",
+        "세파졸린",
+        "ancef",
+        "kefzol",
+        "세파졸린",
+        "케프졸",
+        "세프졸"
+      ]
+    },
+    {
+      "id": "levofloxacin",
+      "terms": [
+        "levofloxacin",
+        "레보플록사신",
+        "levaquin",
+        "크라비트",
+        "레보플록사신",
+        "레보신"
+      ]
+    },
+    {
+      "id": "ciprofloxacin",
+      "terms": [
+        "ciprofloxacin",
+        "시프로플록사신",
+        "cipro",
+        "시프로바이",
+        "시프로플록사신",
+        "씨프로"
+      ]
+    },
+    {
+      "id": "valproic-acid",
+      "terms": [
+        "valproic acid",
+        "발프로산",
+        "depakote",
+        "depakene",
+        "데파코트",
+        "오르필",
+        "발프로산"
+      ]
+    },
+    {
+      "id": "phenytoin",
+      "terms": [
+        "phenytoin",
+        "페니토인",
+        "dilantin",
+        "디란틴",
+        "페니토인"
+      ]
+    },
+    {
+      "id": "carbamazepine",
+      "terms": [
+        "carbamazepine",
+        "카바마제핀",
+        "tegretol",
+        "테그레톨",
+        "카바마제핀"
+      ]
+    },
+    {
+      "id": "amiodarone",
+      "terms": [
+        "amiodarone",
+        "아미오다론",
+        "cordarone",
+        "pacerone",
+        "코다론",
+        "아미오다론"
+      ]
+    },
+    {
+      "id": "atorvastatin",
+      "terms": [
+        "atorvastatin",
+        "아토르바스타틴",
+        "lipitor",
+        "리피토",
+        "아토르바스타틴",
+        "뉴바스틴"
+      ]
+    },
+    {
+      "id": "haloperidol",
+      "terms": [
+        "haloperidol",
+        "할로페리돌",
+        "haldol",
+        "할돌",
+        "할로페리돌"
+      ]
+    },
+    {
+      "id": "diazepam",
+      "terms": [
+        "diazepam",
+        "디아제팜",
+        "valium",
+        "바리움",
+        "디아제팜"
+      ]
+    },
+    {
+      "id": "quetiapine",
+      "terms": [
+        "quetiapine",
+        "쿠에티아핀",
+        "seroquel",
+        "쎄로켈",
+        "쿠에타핀",
+        "쿠에티아핀"
+      ]
+    },
+    {
+      "id": "methotrexate",
+      "terms": [
+        "methotrexate",
+        "메토트렉세이트",
+        "rheumatrex",
+        "trexall",
+        "메토트렉세이트",
+        "유메토"
+      ]
+    },
+    {
+      "id": "azathioprine",
+      "terms": [
+        "azathioprine",
+        "아자티오프린",
+        "imuran",
+        "azasan",
+        "이무란",
+        "아자티오프린"
+      ]
+    },
+    {
+      "id": "isoniazid",
+      "terms": [
+        "isoniazid",
+        "이소니아지드",
+        "inh",
+        "nydrazid",
+        "이소니아지드",
+        "유한이나"
+      ]
+    },
+    {
+      "id": "amoxicillin-clavulanate",
+      "terms": [
+        "amoxicillin-clavulanate",
+        "아목시실린-클라불란산",
+        "augmentin",
+        "오구멘틴",
+        "클라목스",
+        "아목시클라브"
+      ]
+    },
+    {
+      "id": "green-tea-extract",
+      "terms": [
+        "green tea extract",
+        "녹차추출물",
+        "green tea extract",
+        "egcg",
+        "녹차추출물",
+        "카테킨",
+        "EGCG"
+      ]
+    },
+    {
+      "id": "ephedra",
+      "terms": [
+        "ephedra",
+        "마황",
+        "ephedra",
+        "ma-huang",
+        "마황",
+        "에페드라"
+      ]
+    },
+    {
+      "id": "injinho",
+      "terms": [
+        "artemisia capillaris",
+        "인진호",
+        "injinho",
+        "artemisia",
+        "인진호",
+        "인진쑥",
+        "사철쑥"
+      ]
+    },
+    {
+      "id": "spironolactone",
+      "terms": [
+        "spironolactone",
+        "스피로노락톤",
+        "aldactone",
+        "알닥톤",
+        "스피로노락톤",
+        "스피로락톤"
+      ]
+    },
+    {
+      "id": "furosemide",
+      "terms": [
+        "furosemide",
+        "푸로세미드",
+        "lasix",
+        "라식스",
+        "푸로세미드",
+        "후로세마이드"
+      ]
+    },
+    {
+      "id": "tolvaptan",
+      "terms": [
+        "tolvaptan",
+        "톨밥탄",
+        "samsca",
+        "jynarque",
+        "삼스카",
+        "톨밥탄"
+      ]
+    },
+    {
+      "id": "propranolol",
+      "terms": [
+        "propranolol",
+        "프로프라놀롤",
+        "inderal",
+        "인데랄",
+        "프로프라놀롤"
+      ]
+    },
+    {
+      "id": "carvedilol",
+      "terms": [
+        "carvedilol",
+        "카베딜롤",
+        "coreg",
+        "딜라트렌",
+        "카베딜롤"
+      ]
+    },
+    {
+      "id": "lactulose",
+      "terms": [
+        "lactulose",
+        "락툴로스",
+        "enulose",
+        "kristalose",
+        "듀파락",
+        "락툴로스",
+        "듀팔락"
+      ]
+    },
+    {
+      "id": "rifaximin",
+      "terms": [
+        "rifaximin",
+        "리팍시민",
+        "xifaxan",
+        "노르믹스",
+        "리팍시민"
+      ]
+    },
+    {
+      "id": "albumin",
+      "terms": [
+        "albumin",
+        "알부민",
+        "albumin",
+        "albutein",
+        "알부민",
+        "알부미나"
+      ]
+    },
+    {
+      "id": "terlipressin",
+      "terms": [
+        "terlipressin",
+        "테를리프레신",
+        "glypressin",
+        "글리프레신",
+        "테를리프레신"
+      ]
+    },
+    {
+      "id": "midodrine",
+      "terms": [
+        "midodrine",
+        "미도드린",
+        "proamatine",
+        "미도드린",
+        "미도린"
+      ]
+    },
+    {
+      "id": "tenofovir-df",
+      "terms": [
+        "tenofovir df",
+        "테노포비르",
+        "viread",
+        "비리어드",
+        "테노포비르"
+      ]
+    },
+    {
+      "id": "tenofovir-af",
+      "terms": [
+        "tenofovir af",
+        "테노포비르AF",
+        "vemlidy",
+        "베믈리디",
+        "테노포비르AF"
+      ]
+    },
+    {
+      "id": "entecavir",
+      "terms": [
+        "entecavir",
+        "엔테카비르",
+        "baraclude",
+        "바라크루드",
+        "엔테카비르"
+      ]
+    },
+    {
+      "id": "sofosbuvir-ledipasvir",
+      "terms": [
+        "ledipasvir/sofosbuvir",
+        "레디파스비르/소포스부비르",
+        "harvoni",
+        "하보니",
+        "레디파스비르소포스부비르"
+      ]
+    },
+    {
+      "id": "glecaprevir-pibrentasvir",
+      "terms": [
+        "glecaprevir/pibrentasvir",
+        "글레카프레비르/피브렌타스비르",
+        "mavyret",
+        "마비렛",
+        "글레카프레비르피브렌타스비르"
+      ]
+    },
+    {
+      "id": "sofosbuvir-velpatasvir",
+      "terms": [
+        "sofosbuvir/velpatasvir",
+        "소포스부비르/벨파타스비르",
+        "epclusa",
+        "엡클루사",
+        "소포스부비르벨파타스비르"
+      ]
+    },
+    {
+      "id": "lamivudine",
+      "terms": [
+        "lamivudine",
+        "라미부딘",
+        "epivir-hbv",
+        "zeffix",
+        "제픽스",
+        "라미부딘"
+      ]
+    },
+    {
+      "id": "rifampin",
+      "terms": [
+        "rifampin",
+        "리팜핀",
+        "rifadin",
+        "리팜핀",
+        "유한리팜피신"
+      ]
+    },
+    {
+      "id": "pyrazinamide",
+      "terms": [
+        "pyrazinamide",
+        "피라진아미드",
+        "pyrazinamide",
+        "피라진아미드",
+        "유한피라진"
+      ]
+    },
+    {
+      "id": "ethambutol",
+      "terms": [
+        "ethambutol",
+        "에탐부톨",
+        "myambutol",
+        "에탐부톨",
+        "마이암부톨"
+      ]
+    },
+    {
+      "id": "fluconazole",
+      "terms": [
+        "fluconazole",
+        "플루코나졸",
+        "diflucan",
+        "디플루칸",
+        "플루코나졸"
+      ]
+    },
+    {
+      "id": "itraconazole",
+      "terms": [
+        "itraconazole",
+        "이트라코나졸",
+        "sporanox",
+        "스포라녹스",
+        "이트라코나졸"
+      ]
+    },
+    {
+      "id": "voriconazole",
+      "terms": [
+        "voriconazole",
+        "보리코나졸",
+        "vfend",
+        "브이펜드",
+        "보리코나졸"
+      ]
+    },
+    {
+      "id": "caspofungin",
+      "terms": [
+        "caspofungin",
+        "카스포펀진",
+        "cancidas",
+        "칸시다스",
+        "카스포펀진"
+      ]
+    },
+    {
+      "id": "esomeprazole",
+      "terms": [
+        "esomeprazole",
+        "에소메프라졸",
+        "nexium",
+        "넥시움",
+        "에소메프라졸",
+        "에소메졸"
+      ]
+    },
+    {
+      "id": "pantoprazole",
+      "terms": [
+        "pantoprazole",
+        "판토프라졸",
+        "protonix",
+        "판토록",
+        "판토프라졸",
+        "팬토졸"
+      ]
+    },
+    {
+      "id": "omeprazole",
+      "terms": [
+        "omeprazole",
+        "오메프라졸",
+        "prilosec",
+        "로섹",
+        "오메프라졸"
+      ]
+    },
+    {
+      "id": "famotidine",
+      "terms": [
+        "famotidine",
+        "파모티딘",
+        "pepcid",
+        "가스터",
+        "파모티딘"
+      ]
+    },
+    {
+      "id": "metformin",
+      "terms": [
+        "metformin",
+        "메트포르민",
+        "glucophage",
+        "글루코파지",
+        "메트포르민",
+        "다이아벡스"
+      ]
+    },
+    {
+      "id": "sitagliptin",
+      "terms": [
+        "sitagliptin",
+        "시타글립틴",
+        "januvia",
+        "자누비아",
+        "시타글립틴"
+      ]
+    },
+    {
+      "id": "linagliptin",
+      "terms": [
+        "linagliptin",
+        "리나글립틴",
+        "tradjenta",
+        "트라젠타",
+        "리나글립틴"
+      ]
+    },
+    {
+      "id": "empagliflozin",
+      "terms": [
+        "empagliflozin",
+        "엠파글리플로진",
+        "jardiance",
+        "자디앙",
+        "엠파글리플로진"
+      ]
+    },
+    {
+      "id": "pioglitazone",
+      "terms": [
+        "pioglitazone",
+        "피오글리타존",
+        "actos",
+        "액토스",
+        "피오글리타존"
+      ]
+    },
+    {
+      "id": "glimepiride",
+      "terms": [
+        "glimepiride",
+        "글리메피리드",
+        "amaryl",
+        "아마릴",
+        "글리메피리드"
+      ]
+    },
+    {
+      "id": "gliclazide",
+      "terms": [
+        "gliclazide",
+        "글리클라지드",
+        "diamicron",
+        "다이아미크롱",
+        "글리클라지드"
+      ]
+    },
+    {
+      "id": "insulin",
+      "terms": [
+        "insulin",
+        "인슐린",
+        "humulin",
+        "novolin",
+        "lantus",
+        "novorapid",
+        "휴물린",
+        "노보린",
+        "란투스",
+        "노보래피드"
+      ]
+    },
+    {
+      "id": "amlodipine",
+      "terms": [
+        "amlodipine",
+        "암로디핀",
+        "norvasc",
+        "노바스크",
+        "암로디핀",
+        "아모디핀"
+      ]
+    },
+    {
+      "id": "losartan",
+      "terms": [
+        "losartan",
+        "로사르탄",
+        "cozaar",
+        "코자",
+        "로사르탄"
+      ]
+    },
+    {
+      "id": "valsartan",
+      "terms": [
+        "valsartan",
+        "발사르탄",
+        "diovan",
+        "디오반",
+        "발사르탄"
+      ]
+    },
+    {
+      "id": "lisinopril",
+      "terms": [
+        "lisinopril",
+        "리시노프릴",
+        "zestril",
+        "prinivil",
+        "제스트릴",
+        "리시노프릴"
+      ]
+    },
+    {
+      "id": "ramipril",
+      "terms": [
+        "ramipril",
+        "라미프릴",
+        "altace",
+        "트리테이스",
+        "라미프릴"
+      ]
+    },
+    {
+      "id": "bisoprolol",
+      "terms": [
+        "bisoprolol",
+        "비소프롤롤",
+        "zebeta",
+        "콩코르",
+        "비소프롤롤"
+      ]
+    },
+    {
+      "id": "diltiazem",
+      "terms": [
+        "diltiazem",
+        "딜티아젬",
+        "cardizem",
+        "dilacor",
+        "헤르벤",
+        "딜티아젬"
+      ]
+    },
+    {
+      "id": "warfarin",
+      "terms": [
+        "warfarin",
+        "와파린",
+        "coumadin",
+        "쿠마딘",
+        "와파린"
+      ]
+    },
+    {
+      "id": "rivaroxaban",
+      "terms": [
+        "rivaroxaban",
+        "리바록사반",
+        "xarelto",
+        "자렐토",
+        "리바록사반"
+      ]
+    },
+    {
+      "id": "apixaban",
+      "terms": [
+        "apixaban",
+        "아픽사반",
+        "eliquis",
+        "엘리퀴스",
+        "아픽사반"
+      ]
+    },
+    {
+      "id": "edoxaban",
+      "terms": [
+        "edoxaban",
+        "에독사반",
+        "savaysa",
+        "lixiana",
+        "릭시아나",
+        "에독사반"
+      ]
+    },
+    {
+      "id": "dabigatran",
+      "terms": [
+        "dabigatran",
+        "다비가트란",
+        "pradaxa",
+        "프라닥사",
+        "다비가트란"
+      ]
+    },
+    {
+      "id": "aspirin",
+      "terms": [
+        "aspirin",
+        "아스피린",
+        "aspirin",
+        "bayer",
+        "아스피린",
+        "바이엘아스피린"
+      ]
+    },
+    {
+      "id": "clopidogrel",
+      "terms": [
+        "clopidogrel",
+        "클로피도그렐",
+        "plavix",
+        "플라빅스",
+        "클로피도그렐"
+      ]
+    },
+    {
+      "id": "sertraline",
+      "terms": [
+        "sertraline",
+        "설트랄린",
+        "zoloft",
+        "졸로푸트",
+        "설트랄린"
+      ]
+    },
+    {
+      "id": "escitalopram",
+      "terms": [
+        "escitalopram",
+        "에스시탈로프람",
+        "lexapro",
+        "렉사프로",
+        "에스시탈로프람"
+      ]
+    },
+    {
+      "id": "fluoxetine",
+      "terms": [
+        "fluoxetine",
+        "플루옥세틴",
+        "prozac",
+        "프로작",
+        "플루옥세틴"
+      ]
+    },
+    {
+      "id": "mirtazapine",
+      "terms": [
+        "mirtazapine",
+        "미르타자핀",
+        "remeron",
+        "레메론",
+        "미르타자핀"
+      ]
+    },
+    {
+      "id": "trazodone",
+      "terms": [
+        "trazodone",
+        "트라조돈",
+        "desyrel",
+        "트리티코",
+        "트라조돈"
+      ]
+    },
+    {
+      "id": "duloxetine",
+      "terms": [
+        "duloxetine",
+        "둘록세틴",
+        "cymbalta",
+        "심발타",
+        "둘록세틴"
+      ]
+    },
+    {
+      "id": "lorazepam",
+      "terms": [
+        "lorazepam",
+        "로라제팜",
+        "ativan",
+        "아티반",
+        "로라제팜"
+      ]
+    },
+    {
+      "id": "oxazepam",
+      "terms": [
+        "oxazepam",
+        "옥사제팜",
+        "serax",
+        "옥사제팜"
+      ]
+    },
+    {
+      "id": "zolpidem",
+      "terms": [
+        "zolpidem",
+        "졸피뎀",
+        "ambien",
+        "스틸녹스",
+        "졸피뎀"
+      ]
+    },
+    {
+      "id": "melatonin",
+      "terms": [
+        "melatonin",
+        "멜라토닌",
+        "melatonin",
+        "멜라토닌"
+      ]
+    },
+    {
+      "id": "morphine",
+      "terms": [
+        "morphine",
+        "모르핀",
+        "ms contin",
+        "kadian",
+        "모르핀",
+        "엠에스콘틴"
+      ]
+    },
+    {
+      "id": "oxycodone",
+      "terms": [
+        "oxycodone",
+        "옥시코돈",
+        "oxycontin",
+        "percocet",
+        "옥시콘틴",
+        "타진",
+        "옥시코돈"
+      ]
+    },
+    {
+      "id": "fentanyl",
+      "terms": [
+        "fentanyl",
+        "펜타닐",
+        "duragesic",
+        "sublimaze",
+        "펜타닐",
+        "듀로제식"
+      ]
+    },
+    {
+      "id": "pregabalin",
+      "terms": [
+        "pregabalin",
+        "프레가발린",
+        "lyrica",
+        "리리카",
+        "프레가발린"
+      ]
+    },
+    {
+      "id": "prednisolone",
+      "terms": [
+        "prednisolone",
+        "프레드니솔론",
+        "prelone",
+        "소론도",
+        "프레드니솔론"
+      ]
+    },
+    {
+      "id": "budesonide",
+      "terms": [
+        "budesonide",
+        "부데소니드",
+        "entocort",
+        "부데소니드",
+        "엔토코트"
+      ]
+    },
+    {
+      "id": "azithromycin",
+      "terms": [
+        "azithromycin",
+        "아지트로마이신",
+        "zithromax",
+        "z-pack",
+        "지스로맥스",
+        "아지트로마이신"
+      ]
+    },
+    {
+      "id": "clarithromycin",
+      "terms": [
+        "clarithromycin",
+        "클라리트로마이신",
+        "biaxin",
+        "클라리시드",
+        "클라리트로마이신"
+      ]
+    },
+    {
+      "id": "doxycycline",
+      "terms": [
+        "doxycycline",
+        "독시사이클린",
+        "vibramycin",
+        "독시사이클린",
+        "비브라마이신"
+      ]
+    },
+    {
+      "id": "allopurinol",
+      "terms": [
+        "allopurinol",
+        "알로퓨리놀",
+        "zyloprim",
+        "자이로릭",
+        "알로퓨리놀"
+      ]
+    },
+    {
+      "id": "colchicine",
+      "terms": [
+        "colchicine",
+        "콜히친",
+        "colcrys",
+        "콜킨",
+        "콜히친"
+      ]
+    },
+    {
+      "id": "ondansetron",
+      "terms": [
+        "ondansetron",
+        "온단세트론",
+        "zofran",
+        "조프란",
+        "온단세트론"
+      ]
+    },
+    {
+      "id": "metoclopramide",
+      "terms": [
+        "metoclopramide",
+        "메토클로프라미드",
+        "reglan",
+        "맥페란",
+        "메토클로프라미드"
+      ]
+    },
+    {
+      "id": "levothyroxine",
+      "terms": [
+        "levothyroxine",
+        "레보티록신",
+        "synthroid",
+        "levoxyl",
+        "씬지로이드",
+        "레보티록신"
+      ]
+    },
+    {
+      "id": "methimazole",
+      "terms": [
+        "methimazole",
+        "메티마졸",
+        "tapazole",
+        "메티마졸",
+        "안티로이드"
+      ]
+    },
+    {
+      "id": "propylthiouracil",
+      "terms": [
+        "propylthiouracil",
+        "프로필티오우라실",
+        "ptu",
+        "안티로이드",
+        "프로필티오우라실"
+      ]
+    },
+    {
+      "id": "tmp-smx",
+      "terms": [
+        "trimethoprim-sulfamethoxazole",
+        "트리메토프림-설파메톡사졸",
+        "bactrim",
+        "septra",
+        "박트림",
+        "셉트라",
+        "트리메토프림설파메톡사졸"
+      ]
+    },
+    {
+      "id": "linezolid",
+      "terms": [
+        "linezolid",
+        "리네졸리드",
+        "zyvox",
+        "자이복스",
+        "리네졸리드"
+      ]
+    },
+    {
+      "id": "clindamycin",
+      "terms": [
+        "clindamycin",
+        "클린다마이신",
+        "cleocin",
+        "클레오신",
+        "클린다마이신"
+      ]
+    }
+  ]
+}
