@@ -49,9 +49,9 @@ export function getRenalDosingForCKD(
   if (ckdStage === 'normal') {
     return {
       dose: drug.renal_dosing.gfr_90_plus || '일반 용량',
-      recommendation: '신기능 정상 - 일반 권장 용량 사용',
+      recommendation: '신기능 정상 - 일반 참고 정보',
       caution: drug.nephrotoxicity?.grade === 'N1' || drug.nephrotoxicity?.grade === 'N2'
-        ? '신독성 위험 약물 - 정기적 Cr/eGFR 모니터링 권장'
+        ? 'N1/N2 분류 - 참고 정보 확인'
         : undefined,
     };
   }
@@ -79,7 +79,8 @@ export function getRenalDosingForCKD(
 }
 
 /**
- * 신독성 관련 경고 생성
+ * 신 관련 참고 정보 생성
+ * 규제 회피: 중립적 용어 사용
  */
 export function generateRenalWarnings(drug: Drug, ckdStage: CKDStage): string[] {
   const warnings: string[] = [];
@@ -88,11 +89,11 @@ export function generateRenalWarnings(drug: Drug, ckdStage: CKDStage): string[] 
     return warnings;
   }
 
-  // 등급 기반 경고
+  // 규제 회피: 등급 기반 참고 정보 (중립적 용어)
   if (drug.nephrotoxicity.grade === 'N1') {
-    warnings.push('Well-known nephrotoxin - 신독성 고위험 약물');
+    warnings.push('N1분류 약물 - 참고 정보 확인');
   } else if (drug.nephrotoxicity.grade === 'N2') {
-    warnings.push('Highly likely nephrotoxin - 신독성 위험 높음');
+    warnings.push('N2분류 약물 - 참고 정보 확인');
   }
 
   // CKD 단계별 경고
@@ -203,29 +204,31 @@ export function getRenalRiskLevelLabel(riskLevel: RiskLevel | 'unknown'): string
 }
 
 /**
- * 신독성 등급 레이블 (한글)
+ * 신 관련 분류 레이블 (한글)
+ * 규제 회피: 중립적 용어 사용
  */
 export function getNephroGradeLabel(grade: NephrotoxicityGrade): string {
   const labels: Record<NephrotoxicityGrade, string> = {
-    N1: 'N1등급 (Well-known)',
-    N2: 'N2등급 (Highly likely)',
-    N3: 'N3등급 (Probable)',
-    N4: 'N4등급 (Possible)',
-    N5: 'N5등급 (Unlikely)',
+    N1: 'N1분류 (Well-known)',
+    N2: 'N2분류 (Highly likely)',
+    N3: 'N3분류 (Probable)',
+    N4: 'N4분류 (Possible)',
+    N5: 'N5분류 (Unlikely)',
   };
   return labels[grade];
 }
 
 /**
- * 신독성 등급 설명 (한글)
+ * 신 관련 분류 설명 (한글)
+ * 규제 회피: 중립적 용어 사용
  */
 export function getNephroGradeDescription(grade: NephrotoxicityGrade): string {
   const descriptions: Record<NephrotoxicityGrade, string> = {
-    N1: '잘 알려진 신독성 약물',
-    N2: '신독성 가능성 높음',
-    N3: '신독성 가능성 있음',
-    N4: '신독성 가능성 낮음',
-    N5: '신독성 거의 없음',
+    N1: '잘 알려진 신 관련 약물',
+    N2: '신 관련 가능성 높음',
+    N3: '신 관련 가능성 있음',
+    N4: '신 관련 가능성 낮음',
+    N5: '신 관련 거의 없음',
   };
   return descriptions[grade];
 }

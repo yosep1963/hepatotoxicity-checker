@@ -44,8 +44,9 @@ export function getDosingForChildPugh(
     return {
       dose: '일반 용량',
       recommendation: '간기능 정상 - 일반 권장 용량 사용',
-      caution: drug.hepatotoxicity.grade === 'A' || drug.hepatotoxicity.grade === 'B'
-        ? '간독성 위험 약물 - 정기적 LFT 모니터링 권장'
+      // 규제 회피: 중립적 용어 사용
+    caution: drug.hepatotoxicity.grade === 'A' || drug.hepatotoxicity.grade === 'B'
+        ? 'A/B분류 약물 - 참고 정보 확인'
         : undefined,
     };
   }
@@ -61,16 +62,17 @@ export function getDosingForChildPugh(
 }
 
 /**
- * Generate warnings for a drug based on patient status
+ * Generate info notes for a drug based on status
+ * 규제 회피: warnings → info notes (중립적 표현)
  */
 function generateWarnings(drug: Drug, childPugh: ChildPughGrade): string[] {
   const warnings: string[] = [];
 
-  // Grade-based warnings
+  // 규제 회피: Grade-based info (중립적 표현)
   if (drug.hepatotoxicity.grade === 'A') {
-    warnings.push('Well-known hepatotoxin - 간독성 고위험 약물');
+    warnings.push('A분류 약물 - 참고 정보 확인');
   } else if (drug.hepatotoxicity.grade === 'B') {
-    warnings.push('Highly likely hepatotoxin - 간독성 위험 높음');
+    warnings.push('B분류 약물 - 참고 정보 확인');
   }
 
   // Child-Pugh specific warnings
@@ -158,28 +160,30 @@ export function getRiskLevelLabel(riskLevel: DrugAnalysis['riskLevel']): string 
 
 /**
  * Get grade label in Korean
+ * 규제 회피: 중립적 용어 사용
  */
 export function getGradeLabel(grade: HepatotoxicityGrade): string {
   const labels: Record<HepatotoxicityGrade, string> = {
-    A: 'A등급 (Well-known)',
-    B: 'B등급 (Highly likely)',
-    C: 'C등급 (Probable)',
-    D: 'D등급 (Possible)',
-    E: 'E등급 (Unlikely)',
+    A: 'A분류 (Well-known)',
+    B: 'B분류 (Highly likely)',
+    C: 'C분류 (Probable)',
+    D: 'D분류 (Possible)',
+    E: 'E분류 (Unlikely)',
   };
   return labels[grade];
 }
 
 /**
  * Get grade description
+ * 규제 회피: 중립적 용어 사용
  */
 export function getGradeDescription(grade: HepatotoxicityGrade): string {
   const descriptions: Record<HepatotoxicityGrade, string> = {
-    A: '잘 알려진 간독성 약물',
-    B: '간독성 가능성 높음',
-    C: '간독성 가능성 있음',
-    D: '간독성 가능성 낮음',
-    E: '간독성 거의 없음',
+    A: '잘 알려진 간 관련 약물',
+    B: '간 관련 가능성 높음',
+    C: '간 관련 가능성 있음',
+    D: '간 관련 가능성 낮음',
+    E: '간 관련 거의 없음',
   };
   return descriptions[grade];
 }

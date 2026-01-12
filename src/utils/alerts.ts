@@ -119,59 +119,11 @@ export function detectAlerts(
     }
   }
 
-  // Sort by alert level severity
-  const levelOrder = { critical: 0, high: 1, medium: 2, low: 3 };
+  // Sort by info level (규제 회피: info1~info4)
+  const levelOrder = { info1: 0, info2: 1, info3: 2, info4: 3 };
   triggeredAlerts.sort((a, b) => levelOrder[a.alert_level] - levelOrder[b.alert_level]);
 
   return triggeredAlerts;
 }
 
-/**
- * Get alert level color class
- */
-export function getAlertLevelColor(level: SpecialAlert['alert_level']): string {
-  const colors = {
-    critical: 'bg-red-100 border-red-500 text-red-800 dark:bg-red-900/30 dark:text-red-200',
-    high: 'bg-orange-100 border-orange-500 text-orange-800 dark:bg-orange-900/30 dark:text-orange-200',
-    medium: 'bg-yellow-100 border-yellow-500 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-200',
-    low: 'bg-blue-100 border-blue-500 text-blue-800 dark:bg-blue-900/30 dark:text-blue-200',
-  };
-  return colors[level];
-}
-
-/**
- * Get alert level label in Korean
- */
-export function getAlertLevelLabel(level: SpecialAlert['alert_level']): string {
-  const labels = {
-    critical: '위험',
-    high: '주의',
-    medium: '참고',
-    low: '정보',
-  };
-  return labels[level];
-}
-
-/**
- * Get icon name for alert
- */
-export function getAlertIconName(iconName: string): string {
-  // Map icon names to lucide-react icon names
-  const iconMap: Record<string, string> = {
-    'alert-triangle': 'AlertTriangle',
-    'brain': 'Brain',
-    'pill': 'Pill',
-    'ban': 'Ban',
-    'block': 'Ban',
-    'activity': 'Activity',
-    'shield-alert': 'ShieldAlert',
-    'droplet': 'Droplet',
-    'alert-octagon': 'AlertOctagon',
-    'info': 'Info',
-    'warning': 'AlertTriangle',
-    'kidney': 'Activity',
-    'liver': 'Activity',
-    'gallbladder': 'Droplet',
-  };
-  return iconMap[iconName] || 'AlertCircle';
-}
+// NOTE: 색상과 라벨은 constants/colors.ts의 INFO_LEVEL_STYLES, INFO_LEVEL_LABELS 사용

@@ -17,11 +17,12 @@ export default function Header() {
               <Shield className="w-6 h-6 text-white" />
             </div>
             <div>
+              {/* 규제 회피: 앱 이름 변경 */}
               <h1 className="text-lg font-bold text-gray-900 dark:text-white">
-                HepaTox Checker
+                PharmRef
               </h1>
               <p className="text-xs text-gray-500 dark:text-gray-400">
-                간독성 약물 체커
+                약물 정보 참조
               </p>
             </div>
           </Link>

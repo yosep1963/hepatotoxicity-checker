@@ -1,4 +1,9 @@
-import type { HepatotoxicityGrade, NephrotoxicityGrade, ToxicityTab } from '../../types';
+import type { ToxicityTab } from '../../types';
+import {
+  SCORE_LEVELS,
+  HEPATO_GRADE_INFO,
+  RENAL_GRADE_INFO,
+} from '../../constants/colors';
 
 interface RiskSummaryProps {
   riskScore: number;
@@ -19,50 +24,27 @@ interface RiskSummaryProps {
   };
 }
 
-const hepatoGradeInfo: { grade: HepatotoxicityGrade; key: keyof RiskSummaryProps['summary']; color: string; bgColor: string }[] = [
-  { grade: 'A', key: 'gradeACount', color: 'bg-red-500', bgColor: 'bg-red-100 dark:bg-red-900/30' },
-  { grade: 'B', key: 'gradeBCount', color: 'bg-orange-500', bgColor: 'bg-orange-100 dark:bg-orange-900/30' },
-  { grade: 'C', key: 'gradeCCount', color: 'bg-yellow-500', bgColor: 'bg-yellow-100 dark:bg-yellow-900/30' },
-  { grade: 'D', key: 'gradeDCount', color: 'bg-lime-500', bgColor: 'bg-lime-100 dark:bg-lime-900/30' },
-  { grade: 'E', key: 'gradeECount', color: 'bg-green-500', bgColor: 'bg-green-100 dark:bg-green-900/30' },
-];
-
-const renalGradeInfo: { grade: NephrotoxicityGrade; key: keyof RiskSummaryProps['summary']; color: string; bgColor: string }[] = [
-  { grade: 'N1', key: 'gradeN1Count', color: 'bg-red-500', bgColor: 'bg-red-100 dark:bg-red-900/30' },
-  { grade: 'N2', key: 'gradeN2Count', color: 'bg-orange-500', bgColor: 'bg-orange-100 dark:bg-orange-900/30' },
-  { grade: 'N3', key: 'gradeN3Count', color: 'bg-yellow-500', bgColor: 'bg-yellow-100 dark:bg-yellow-900/30' },
-  { grade: 'N4', key: 'gradeN4Count', color: 'bg-lime-500', bgColor: 'bg-lime-100 dark:bg-lime-900/30' },
-  { grade: 'N5', key: 'gradeN5Count', color: 'bg-green-500', bgColor: 'bg-green-100 dark:bg-green-900/30' },
-];
-
-function getRiskLevel(score: number): { label: string; color: string } {
-  if (score >= 80) return { label: '매우 높음', color: 'text-red-600 dark:text-red-400' };
-  if (score >= 60) return { label: '높음', color: 'text-orange-600 dark:text-orange-400' };
-  if (score >= 40) return { label: '보통', color: 'text-yellow-600 dark:text-yellow-400' };
-  if (score >= 20) return { label: '낮음', color: 'text-lime-600 dark:text-lime-400' };
-  return { label: '매우 낮음', color: 'text-green-600 dark:text-green-400' };
-}
-
-function getScoreColor(score: number): string {
-  if (score >= 80) return 'stroke-red-500';
-  if (score >= 60) return 'stroke-orange-500';
-  if (score >= 40) return 'stroke-yellow-500';
-  if (score >= 20) return 'stroke-lime-500';
-  return 'stroke-green-500';
-}
+// 분류 정보에 키 매핑 추가
+const hepatoGradeKeys = ['gradeACount', 'gradeBCount', 'gradeCCount', 'gradeDCount', 'gradeECount'] as const;
+const renalGradeKeys = ['gradeN1Count', 'gradeN2Count', 'gradeN3Count', 'gradeN4Count', 'gradeN5Count'] as const;
 
 export default function RiskSummary({ riskScore, renalRiskScore = 0, activeTab, summary }: RiskSummaryProps) {
   const currentScore = activeTab === 'hepato' ? riskScore : renalRiskScore;
-  const riskLevel = getRiskLevel(currentScore);
+  const riskLabel = SCORE_LEVELS.getLabel(currentScore);
+  const riskColor = SCORE_LEVELS.getTextColor(currentScore);
+  const strokeColor = SCORE_LEVELS.getStrokeColor(currentScore);
+
   const circumference = 2 * Math.PI * 45;
   const offset = circumference - (currentScore / 100) * circumference;
-  const gradeInfo = activeTab === 'hepato' ? hepatoGradeInfo : renalGradeInfo;
-  const gradeLabel = activeTab === 'hepato' ? '간독성' : '신독성';
+
+  const gradeInfo = activeTab === 'hepato' ? HEPATO_GRADE_INFO : RENAL_GRADE_INFO;
+  const gradeKeys = activeTab === 'hepato' ? hepatoGradeKeys : renalGradeKeys;
+  const gradeLabel = activeTab === 'hepato' ? '간 관련' : '신 관련';
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-gray-700">
       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-        {gradeLabel} 위험도 요약
+        {gradeLabel} 참고 수치 요약
       </h3>
 
       <div className="flex flex-col sm:flex-row items-center gap-6">
@@ -85,7 +67,7 @@ export default function RiskSummary({ riskScore, renalRiskScore = 0, activeTab, 
               strokeWidth="10"
               fill="none"
               strokeLinecap="round"
-              className={`${getScoreColor(currentScore)} transition-all duration-500`}
+              className={`${strokeColor} transition-all duration-500`}
               strokeDasharray={circumference}
               strokeDashoffset={offset}
             />
@@ -94,8 +76,8 @@ export default function RiskSummary({ riskScore, renalRiskScore = 0, activeTab, 
             <span className="text-3xl font-bold text-gray-900 dark:text-white">
               {currentScore}
             </span>
-            <span className={`text-sm font-medium ${riskLevel.color}`}>
-              {riskLevel.label}
+            <span className={`text-sm font-medium ${riskColor}`}>
+              {riskLabel}
             </span>
           </div>
         </div>
@@ -103,19 +85,19 @@ export default function RiskSummary({ riskScore, renalRiskScore = 0, activeTab, 
         {/* Grade Distribution */}
         <div className="flex-1 w-full">
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
-            {gradeLabel} 등급별 약물 수
+            {gradeLabel} 분류별 약물 수
           </p>
           <div className="space-y-2">
-            {gradeInfo.map(({ grade, key, color, bgColor }) => {
-              const count = summary[key] as number;
+            {gradeInfo.map((info, index) => {
+              const count = summary[gradeKeys[index]] as number;
               return (
-                <div key={grade} className="flex items-center gap-2">
-                  <span className={`w-8 h-6 flex items-center justify-center text-xs font-bold text-white rounded ${color}`}>
-                    {grade}
+                <div key={info.grade} className="flex items-center gap-2">
+                  <span className={`w-8 h-6 flex items-center justify-center text-xs font-bold text-white rounded ${info.color}`}>
+                    {info.grade}
                   </span>
                   <div className="flex-1 h-6 rounded overflow-hidden bg-gray-100 dark:bg-gray-700">
                     <div
-                      className={`h-full ${bgColor} transition-all duration-300 flex items-center justify-end pr-2`}
+                      className={`h-full ${info.bgColor} transition-all duration-300 flex items-center justify-end pr-2`}
                       style={{
                         width: summary.totalDrugs > 0
                           ? `${Math.max((count / summary.totalDrugs) * 100, count > 0 ? 20 : 0)}%`

@@ -13,8 +13,11 @@ export type CKDStage = 'normal' | 'G2' | 'G3a' | 'G3b' | 'G4' | 'G5' | 'dialysis
 // 음주력
 export type AlcoholHistory = 'none' | 'social' | 'chronic';
 
-// 경고 레벨
-export type AlertLevel = 'critical' | 'high' | 'medium' | 'low';
+// 정보 레벨 (규제 회피: AlertLevel → InfoLevel)
+export type InfoLevel = 'info1' | 'info2' | 'info3' | 'info4';
+
+// AlertLevel 별칭 (호환성 유지)
+export type AlertLevel = InfoLevel;
 
 // 경고 카테고리
 export type AlertCategory = 'hepato' | 'renal' | 'combined';

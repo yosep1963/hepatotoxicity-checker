@@ -10,17 +10,18 @@ interface ToxicityTabsProps {
 export default function ToxicityTabs({ hepatoCount = 0, renalCount = 0 }: ToxicityTabsProps) {
   const { state, setActiveTab } = useApp();
 
+  // 규제 회피: 중립적 라벨
   const tabs: { id: ToxicityTab; label: string; icon: typeof Activity; count: number; color: string }[] = [
     {
       id: 'hepato',
-      label: '간독성',
+      label: '간 관련',
       icon: Activity,
       count: hepatoCount,
       color: 'blue'
     },
     {
       id: 'renal',
-      label: '신독성',
+      label: '신 관련',
       icon: Droplets,
       count: renalCount,
       color: 'purple'

@@ -11,21 +11,8 @@ import {
   Brain,
   Pill,
 } from 'lucide-react';
-import type { TriggeredAlert, AlertLevel } from '../../types';
-
-const alertStyles: Record<AlertLevel, string> = {
-  critical: 'bg-red-50 border-red-500 text-red-800 dark:bg-red-900/20 dark:text-red-200',
-  high: 'bg-orange-50 border-orange-500 text-orange-800 dark:bg-orange-900/20 dark:text-orange-200',
-  medium: 'bg-yellow-50 border-yellow-500 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-200',
-  low: 'bg-blue-50 border-blue-500 text-blue-800 dark:bg-blue-900/20 dark:text-blue-200',
-};
-
-const alertLabels: Record<AlertLevel, string> = {
-  critical: '위험',
-  high: '주의',
-  medium: '참고',
-  low: '정보',
-};
+import type { TriggeredAlert } from '../../types';
+import { INFO_LEVEL_STYLES, INFO_LEVEL_LABELS } from '../../constants/colors';
 
 const iconComponents: Record<string, React.ComponentType<{ className?: string }>> = {
   'alert-triangle': AlertTriangle,
@@ -44,8 +31,7 @@ interface AlertBannerProps {
 }
 
 export default function AlertBanner({ alert, drugNames = {} }: AlertBannerProps) {
-  const [isExpanded, setIsExpanded] = useState(alert.alert_level === 'critical');
-
+  const [isExpanded, setIsExpanded] = useState(alert.alert_level === 'info1');
   const IconComponent = iconComponents[alert.icon] || AlertTriangle;
 
   const triggeredDrugNames = alert.triggered_by
@@ -54,7 +40,7 @@ export default function AlertBanner({ alert, drugNames = {} }: AlertBannerProps)
 
   return (
     <div
-      className={`p-4 rounded-lg border-l-4 ${alertStyles[alert.alert_level]} animate-fadeIn`}
+      className={`p-4 rounded-lg border-l-4 ${INFO_LEVEL_STYLES[alert.alert_level]} animate-fadeIn`}
     >
       <div
         className="flex items-start justify-between cursor-pointer"
@@ -65,7 +51,7 @@ export default function AlertBanner({ alert, drugNames = {} }: AlertBannerProps)
           <div>
             <div className="flex items-center gap-2 flex-wrap">
               <span className="font-bold text-xs uppercase tracking-wide">
-                [{alertLabels[alert.alert_level]}]
+                [{INFO_LEVEL_LABELS[alert.alert_level]}]
               </span>
               <span className="font-semibold">{alert.title}</span>
             </div>
@@ -110,8 +96,8 @@ export function AlertList({ alerts, drugNames }: AlertListProps) {
   return (
     <div className="space-y-3">
       <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center gap-2">
-        <AlertTriangle className="w-4 h-4" />
-        경고 ({alerts.length}개)
+        <Info className="w-4 h-4" />
+        참고 정보 ({alerts.length}개)
       </h3>
       <div className="space-y-2">
         {alerts.map(alert => (

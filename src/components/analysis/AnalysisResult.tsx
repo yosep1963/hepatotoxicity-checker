@@ -18,40 +18,13 @@ import ToxicityTabs from './ToxicityTabs';
 import RiskSummary from './RiskSummary';
 import { AlertList } from './AlertBanner';
 import DrugDetailModal from '../drug/DrugDetailModal';
-import type { HepatotoxicityGrade, NephrotoxicityGrade } from '../../types';
 import { AlertTriangle, Droplets, Activity } from 'lucide-react';
-
-const hepatoGradeColors: Record<HepatotoxicityGrade, string> = {
-  A: 'border-red-500 bg-red-50 dark:bg-red-900/20',
-  B: 'border-orange-500 bg-orange-50 dark:bg-orange-900/20',
-  C: 'border-yellow-500 bg-yellow-50 dark:bg-yellow-900/20',
-  D: 'border-lime-500 bg-lime-50 dark:bg-lime-900/20',
-  E: 'border-green-500 bg-green-50 dark:bg-green-900/20',
-};
-
-const hepatoGradeBadgeColors: Record<HepatotoxicityGrade, string> = {
-  A: 'bg-red-600',
-  B: 'bg-orange-500',
-  C: 'bg-yellow-500',
-  D: 'bg-lime-500',
-  E: 'bg-green-500',
-};
-
-const renalGradeColors: Record<NephrotoxicityGrade, string> = {
-  N1: 'border-red-500 bg-red-50 dark:bg-red-900/20',
-  N2: 'border-orange-500 bg-orange-50 dark:bg-orange-900/20',
-  N3: 'border-yellow-500 bg-yellow-50 dark:bg-yellow-900/20',
-  N4: 'border-lime-500 bg-lime-50 dark:bg-lime-900/20',
-  N5: 'border-green-500 bg-green-50 dark:bg-green-900/20',
-};
-
-const renalGradeBadgeColors: Record<NephrotoxicityGrade, string> = {
-  N1: 'bg-red-600',
-  N2: 'bg-orange-500',
-  N3: 'bg-yellow-500',
-  N4: 'bg-lime-500',
-  N5: 'bg-green-500',
-};
+import {
+  HEPATO_GRADE_COLORS,
+  HEPATO_GRADE_BADGE_COLORS,
+  RENAL_GRADE_COLORS,
+  RENAL_GRADE_BADGE_COLORS,
+} from '../../constants/colors';
 
 export default function AnalysisResult() {
   const { state } = useApp();
@@ -63,7 +36,6 @@ export default function AnalysisResult() {
     const childPugh = state.childPughGrade;
     const ckdStage = state.ckdStage;
 
-    // 간독성 분석
     const drugAnalyses = drugs.map(drug => {
       const hepatoAnalysis = analyzeDrug(drug, childPugh);
       const renalAnalysis = analyzeRenalToxicity(drug, ckdStage);
@@ -82,10 +54,8 @@ export default function AnalysisResult() {
       ...renalSummary,
     };
 
-    // 경고 (CKD 포함)
     const triggeredAlerts = detectAlerts(drugs, childPugh, allAlerts, ckdStage);
 
-    // 탭별 약물 수 계산
     const hepatoCount = drugs.filter(d =>
       d.hepatotoxicity.grade === 'A' || d.hepatotoxicity.grade === 'B'
     ).length;
@@ -114,7 +84,6 @@ export default function AnalysisResult() {
 
   const selectedDrug = state.selectedDrugs.find(d => d.id === selectedDrugId);
 
-  // 현재 탭에 맞는 경고 필터링
   const filteredAlerts = useMemo(() => {
     return analysis.alerts.filter(alert => {
       if (state.activeTab === 'hepato') {
@@ -135,13 +104,11 @@ export default function AnalysisResult() {
 
   return (
     <div className="space-y-6">
-      {/* Toxicity Tabs */}
       <ToxicityTabs
         hepatoCount={analysis.hepatoCount}
         renalCount={analysis.renalCount}
       />
 
-      {/* Risk Summary */}
       <RiskSummary
         riskScore={analysis.hepatoRiskScore}
         renalRiskScore={analysis.renalRiskScore}
@@ -149,31 +116,28 @@ export default function AnalysisResult() {
         summary={analysis.summary}
       />
 
-      {/* Alerts */}
       <AlertList alerts={filteredAlerts} drugNames={drugNames} />
 
-      {/* Drug Cards */}
       <div className="space-y-3">
         <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300">
-          {state.activeTab === 'hepato' ? '간독성' : '신독성'} 약물별 분석 결과
+          {state.activeTab === 'hepato' ? '간 관련' : '신 관련'} 약물별 정보
         </h3>
         <div className="grid gap-3">
           {analysis.drugAnalyses.map(drugAnalysis => {
             const { drug, dosing, warnings, renalDosing, renalWarnings } = drugAnalysis;
             const isHepatoTab = state.activeTab === 'hepato';
 
-            // 탭에 맞는 색상과 등급 표시
             const gradeColor = isHepatoTab
-              ? hepatoGradeColors[drug.hepatotoxicity.grade]
+              ? HEPATO_GRADE_COLORS[drug.hepatotoxicity.grade]
               : drug.nephrotoxicity
-                ? renalGradeColors[drug.nephrotoxicity.grade]
+                ? RENAL_GRADE_COLORS[drug.nephrotoxicity.grade]
                 : 'border-gray-300 bg-gray-50 dark:bg-gray-800';
 
             const gradeLabel = isHepatoTab
               ? getGradeLabel(drug.hepatotoxicity.grade)
               : drug.nephrotoxicity
                 ? getNephroGradeLabel(drug.nephrotoxicity.grade)
-                : '신독성 정보 없음';
+                : '신 관련 정보 없음';
 
             const currentDosing = isHepatoTab ? dosing : renalDosing;
             const currentWarnings = isHepatoTab ? warnings : (renalWarnings || []);
@@ -196,20 +160,18 @@ export default function AnalysisResult() {
                       <span className="font-semibold text-gray-900 dark:text-white">
                         {drug.name_kr}
                       </span>
-                      {/* 간독성 배지 */}
                       <span
                         className={`px-2 py-0.5 text-xs font-bold text-white rounded flex items-center gap-1 ${
-                          hepatoGradeBadgeColors[drug.hepatotoxicity.grade]
+                          HEPATO_GRADE_BADGE_COLORS[drug.hepatotoxicity.grade]
                         }`}
                       >
                         <Activity size={10} />
                         {drug.hepatotoxicity.grade}
                       </span>
-                      {/* 신독성 배지 */}
                       {drug.nephrotoxicity && (
                         <span
                           className={`px-2 py-0.5 text-xs font-bold text-white rounded flex items-center gap-1 ${
-                            renalGradeBadgeColors[drug.nephrotoxicity.grade]
+                            RENAL_GRADE_BADGE_COLORS[drug.nephrotoxicity.grade]
                           }`}
                         >
                           <Droplets size={10} />
@@ -221,11 +183,10 @@ export default function AnalysisResult() {
                       {gradeLabel}
                     </p>
 
-                    {/* Dosing recommendation */}
                     {currentDosing && showDosing && (
                       <div className="mt-3 p-2 bg-white/50 dark:bg-gray-900/30 rounded">
                         <p className="text-sm font-medium text-gray-800 dark:text-gray-200">
-                          {dosingLabel} 권고:
+                          {dosingLabel} 참고 정보:
                         </p>
                         <p className="text-sm text-gray-700 dark:text-gray-300">
                           {currentDosing.dose}
@@ -233,7 +194,6 @@ export default function AnalysisResult() {
                       </div>
                     )}
 
-                    {/* Warnings */}
                     {currentWarnings.length > 0 && (
                       <div className="mt-2 flex items-start gap-1">
                         <AlertTriangle className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
@@ -250,7 +210,97 @@ export default function AnalysisResult() {
         </div>
       </div>
 
-      {/* Drug Detail Modal */}
+      {/* 분류 등급 설명 */}
+      <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700">
+        <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
+          {state.activeTab === 'hepato' ? '간 관련' : '신 관련'} 분류 설명
+        </h4>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-600 dark:text-gray-400">
+          {state.activeTab === 'hepato' ? (
+            <>
+              <div className="flex items-center gap-2">
+                <span className="w-6 h-5 flex items-center justify-center text-white font-bold rounded bg-blue-700 text-[10px]">A</span>
+                <span>Well-known: 잘 알려진 간 관련 약물</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-6 h-5 flex items-center justify-center text-white font-bold rounded bg-blue-500 text-[10px]">B</span>
+                <span>Highly likely: 간 관련 가능성 높음</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-6 h-5 flex items-center justify-center text-white font-bold rounded bg-slate-500 text-[10px]">C</span>
+                <span>Probable: 간 관련 가능성 있음</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-6 h-5 flex items-center justify-center text-white font-bold rounded bg-gray-500 text-[10px]">D</span>
+                <span>Possible: 간 관련 가능성 낮음</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-6 h-5 flex items-center justify-center text-white font-bold rounded bg-gray-400 text-[10px]">E</span>
+                <span>Unlikely: 간 관련 거의 없음</span>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="flex items-center gap-2">
+                <span className="w-7 h-5 flex items-center justify-center text-white font-bold rounded bg-purple-700 text-[10px]">N1</span>
+                <span>Well-known: 잘 알려진 신 관련 약물</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-7 h-5 flex items-center justify-center text-white font-bold rounded bg-purple-500 text-[10px]">N2</span>
+                <span>Highly likely: 신 관련 가능성 높음</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-7 h-5 flex items-center justify-center text-white font-bold rounded bg-slate-500 text-[10px]">N3</span>
+                <span>Probable: 신 관련 가능성 있음</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-7 h-5 flex items-center justify-center text-white font-bold rounded bg-gray-500 text-[10px]">N4</span>
+                <span>Possible: 신 관련 가능성 낮음</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-7 h-5 flex items-center justify-center text-white font-bold rounded bg-gray-400 text-[10px]">N5</span>
+                <span>Unlikely: 신 관련 거의 없음</span>
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+
+      {/* 참고 수치 설명 */}
+      <div className="p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700">
+        <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
+          참고 수치 (1-100) 설명
+        </h4>
+        <p className="text-xs text-gray-600 dark:text-gray-400 mb-3">
+          참고 수치는 선택된 약물들의 분류와 사용자 조건을 종합하여 산출된 참고용 지표입니다.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2 text-xs">
+          <div className="flex items-center gap-2 p-2 bg-blue-50 dark:bg-blue-900/20 rounded">
+            <span className="w-12 text-center font-bold text-blue-600 dark:text-blue-400">0-20</span>
+            <span className="text-gray-600 dark:text-gray-400">1단계 (낮음)</span>
+          </div>
+          <div className="flex items-center gap-2 p-2 bg-blue-50 dark:bg-blue-900/20 rounded">
+            <span className="w-12 text-center font-bold text-blue-500 dark:text-blue-400">21-40</span>
+            <span className="text-gray-600 dark:text-gray-400">2단계 (보통)</span>
+          </div>
+          <div className="flex items-center gap-2 p-2 bg-slate-50 dark:bg-slate-900/20 rounded">
+            <span className="w-12 text-center font-bold text-slate-600 dark:text-slate-400">41-60</span>
+            <span className="text-gray-600 dark:text-gray-400">3단계 (중간)</span>
+          </div>
+          <div className="flex items-center gap-2 p-2 bg-slate-50 dark:bg-slate-900/20 rounded">
+            <span className="w-12 text-center font-bold text-slate-500 dark:text-slate-400">61-80</span>
+            <span className="text-gray-600 dark:text-gray-400">4단계 (높음)</span>
+          </div>
+          <div className="flex items-center gap-2 p-2 bg-gray-100 dark:bg-gray-700/50 rounded">
+            <span className="w-12 text-center font-bold text-gray-600 dark:text-gray-400">81-100</span>
+            <span className="text-gray-600 dark:text-gray-400">5단계 (매우 높음)</span>
+          </div>
+        </div>
+        <p className="text-xs text-gray-500 dark:text-gray-500 mt-3 italic">
+          ※ 이 수치는 일반적인 참고 정보이며, 실제 의사결정에는 전문가 상담이 필요합니다.
+        </p>
+      </div>
+
       {selectedDrug && (
         <DrugDetailModal
           drug={selectedDrug}

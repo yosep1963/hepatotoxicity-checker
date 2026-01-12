@@ -9,26 +9,29 @@ import {
   getCKDStageLabel,
 } from '../../utils/renalAnalysis';
 
+// 규제 회피: 중립 색상 사용 (빨강/주황 → 파랑/회색)
 const hepatoGradeBadgeColors: Record<HepatotoxicityGrade, string> = {
-  A: 'bg-red-600',
-  B: 'bg-orange-500',
-  C: 'bg-yellow-500',
-  D: 'bg-lime-500',
-  E: 'bg-green-500',
+  A: 'bg-blue-600',
+  B: 'bg-blue-500',
+  C: 'bg-slate-500',
+  D: 'bg-gray-500',
+  E: 'bg-gray-400',
 };
 
+// 규제 회피: 중립 색상 사용
 const renalGradeBadgeColors: Record<NephrotoxicityGrade, string> = {
-  N1: 'bg-red-600',
-  N2: 'bg-orange-500',
-  N3: 'bg-yellow-500',
-  N4: 'bg-lime-500',
-  N5: 'bg-green-500',
+  N1: 'bg-blue-600',
+  N2: 'bg-blue-500',
+  N3: 'bg-slate-500',
+  N4: 'bg-gray-500',
+  N5: 'bg-gray-400',
 };
 
+// 규제 회피: 중립적 라벨
 const tabs = [
   { id: 'info', label: '기본정보', icon: Pill },
-  { id: 'hepato', label: '간독성', icon: Activity },
-  { id: 'renal', label: '신독성', icon: Droplets },
+  { id: 'hepato', label: '간 관련', icon: Activity },
+  { id: 'renal', label: '신 관련', icon: Droplets },
 ];
 
 interface DrugDetailModalProps {

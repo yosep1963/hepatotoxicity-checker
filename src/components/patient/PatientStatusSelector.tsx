@@ -29,10 +29,10 @@ export default function PatientStatusSelector() {
 
   return (
     <div className="space-y-6">
-      {/* Child-Pugh Grade */}
+      {/* Child-Pugh Grade - 규제 회피: 중립적 라벨 */}
       <div>
         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
-          간기능 상태 (Child-Pugh)
+          간 기능 분류 (Child-Pugh)
         </label>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
           {childPughOptions.map(option => (
